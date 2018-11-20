@@ -1006,6 +1006,17 @@ footer p {
 		/*z-index: 1;*/
 	}
 }
+@media screen and (min-width: 1441px) {
+	.about {
+		padding-top: 28rem;
+	}
+	.about p {
+		font-size: 0.70vw;
+	}
+	.first-line h1 {
+		font-size: 2.81vw;
+	}
+}
 @media screen and (max-width: 400px) {
 	.about p {
 		font-size: 1.6rem;
