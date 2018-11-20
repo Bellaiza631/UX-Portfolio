@@ -25,6 +25,7 @@ body {
 	background-color: #ffffff;
 	margin: 0 auto;
 }
+
 /*------------------------------------------header background---------------------------------------------*/
 
 .header-cs {
@@ -37,6 +38,29 @@ body {
 	background-size: cover;
 	position: relative;
 	background-image: url(../images/2.png);
+}
+.arrow-down img{
+	position: relative;
+	width: 40px;
+	height: auto;
+	margin-right: auto;
+  margin-left: auto;
+  display: block;
+	padding-bottom: 20px;
+	animation-name: gradient;
+	animation: bounce 5s ease infinite;
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
 }
 .projects {
 	display: grid;
@@ -82,6 +106,12 @@ body {
 	mix-blend-mode: normal;
 	opacity: 0.6;
 	/*z-index: 3;*/
+	animation-name: gradient;
+	animation: gradient 5s ease infinite;
+}
+@keyframes gradient {
+	from {background-color: #FE5A8A;}
+  to {background-color: #F6BA1F;}
 }
 .two {
 	width: 100%;
@@ -185,7 +215,7 @@ body {
 }
 .intro {
 	padding-top: 17rem;
-	padding-bottom: 15rem;
+	padding-bottom: 10rem;
 	padding-right: 10%;
 	padding-left: 10%;
 	position: relative;
@@ -198,6 +228,8 @@ body {
 	line-height: 1.25;
 	color: #ffffff;
 	padding-bottom: 4rem;
+	animation-name: gradient;
+	animation: fadeIn 3s ease;
 }
 .intro p {
 	font-family: 'Montserrat', serif;
@@ -206,6 +238,21 @@ body {
 	font-weight: 400;
 	line-height: 125%;
 	color: #ffffff;
+	animation-name: gradient;
+	animation: fadeIn 3s ease;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  45% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0%;
+  }
 }
 .mobile-view {
 	font-family: 'Montserrat', sans-serif;
@@ -249,6 +296,9 @@ body {
 	height: 50px;
 	display: block;
 	margin: 0 auto;
+}
+#button-prototype:hover {
+  background-color: #0b3ea5;
 }
 .gradient-blue-backg {
 	background-image: linear-gradient(#ffffff, #ffffff, #C1E5FF);
@@ -378,7 +428,9 @@ body {
 .image-uconnect-cs img {
 	width: 100%;
 	height: auto;
+	animation: fadeIn 3s ease;
 }
+
 .intro-project {
 	max-height: 100%;
 	height: auto;
@@ -418,6 +470,10 @@ body {
 	width: 265px;
 	height: 50px;
 }
+#button-cs:hover {
+  background-color: #f37461;
+}
+
 .row {
 	display: flex;
 }
@@ -879,6 +935,8 @@ footer p {
 	font-weight: bold;
 	line-height: 1.25;
 	color: #ffffff;
+	animation-name: gradient;
+	animation: fadeIn 3s ease;
 }
 .about p {
 	font-family: 'Montserrat', serif;
@@ -888,6 +946,22 @@ footer p {
 	line-height: 125%;
 	color: #ffffff;
 	padding-bottom: 3%;
+	animation-name: gradient;
+	animation: fadeIn 3s ease;
+}
+
+@keyframes fadeIn {
+0% {
+	opacity: 0;
+}
+
+45% {
+	opacity: 1;
+}
+
+100% {
+	opacity: 0%;
+}
 }
 .first-line p {
 	font-family: 'Montserrat', serif;
@@ -896,6 +970,29 @@ footer p {
 .first-line h1 {
 	font-family: 'Montserrat', serif;
 	display: inline;
+	animation-name: spaceboots;
+	animation: fadeIn 3s ease;
+}
+@-webkit-keyframes spaceboots {
+	0% { -webkit-transform: translate(2px, 1px) rotate(0deg); }
+	10% { -webkit-transform: translate(-1px, -2px) rotate(-1deg); }
+	20% { -webkit-transform: translate(-3px, 0px) rotate(1deg); }
+	30% { -webkit-transform: translate(0px, 2px) rotate(0deg); }
+	40% { -webkit-transform: translate(1px, -1px) rotate(1deg); }
+	50% { -webkit-transform: translate(-1px, 2px) rotate(-1deg); }
+	60% { -webkit-transform: translate(-3px, 1px) rotate(0deg); }
+	70% { -webkit-transform: translate(2px, 1px) rotate(-1deg); }
+	80% { -webkit-transform: translate(-1px, -1px) rotate(1deg); }
+	90% { -webkit-transform: translate(2px, 2px) rotate(0deg); }
+	100% { -webkit-transform: translate(1px, -2px) rotate(-1deg); }
+}
+.first-line:hover,
+.first-line:focus {
+	-webkit-animation-name: spaceboots;
+	-webkit-animation-duration: 0.8s;
+	-webkit-transform-origin:50% 50%;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-timing-function: linear;
 }
 .color-change {
 	color: #754ED0;
@@ -1067,6 +1164,9 @@ footer p {
 	}
 }
 @media screen and (max-width: 420px) {
+	.arrow-down img {
+		width: 30px;
+	}
 	.navigation-bar {
 		display: none;
 	}
@@ -1724,6 +1824,11 @@ header::after {
 .site-nav li {
 	border-bottom: 1px solid #9676E0;
 }
+.site-nav ul li:hover,
+.site-nav:focus ul li{
+text-transform: uppercase;
+font-weight: 700;
+}
 .site-nav li:last-child {
 	border-bottom: none;
 }
@@ -2007,3 +2112,11 @@ textarea {
 	}
 }
 /*---------------------------------------------------------------------------------*/
+section {
+	opacity:0;
+}
+@media screen and (max-width: 1024px) {
+	section {
+		opacity:1;
+	}
+}
