@@ -1010,6 +1010,14 @@ footer p {
 	mix-blend-mode: normal;
 	opacity: 0.6;
 	/*z-index: 3;*/
+	animation-name: gradient;
+	animation: gradient 5s ease infinite;
+	}
+}
+
+@keyframes gradient {
+from {background-color: #FE5A8A;}
+to {background-color: #F6BA1F;}
 }
 .two-abtme {
 	width: 100%;
@@ -2000,6 +2008,7 @@ font-weight: 700;
 	background-image: url(../images/2.png);
 }
 .connect-message {
+	width: 50%;
 	padding: 15% 0 10% 10%;
 	font-size: 1.8rem;
 	font-family: 'Montserrat', sans-serif;
@@ -2013,7 +2022,7 @@ font-weight: 700;
 	line-height: 125%;
 }
 .connect {
-	padding: 5% 10% 10%;
+	width: 50%;
 }
 .contact-form {
 	display: flex;
@@ -2037,7 +2046,6 @@ input {
 	padding: 15px;
 	padding-left: 10px;
 	padding-right: 70px;
-	margin: auto;
 	margin-top: 15px;
 	color: #000000;
 	border-radius: 5px;
@@ -2052,7 +2060,6 @@ textarea {
 	padding-left: 10px;
 	padding-right: 70px;
 	padding-top: 15px;
-	margin: auto;
 	margin-top: 15px;
 	margin-bottom: 30px;
 	color: #000000;
@@ -2081,12 +2088,10 @@ textarea {
 		display: block;
 	}
 	.connect-message {
-		padding: 10% 5% 0 10%;
 		margin-left: auto;
 		margin-right: auto
 	}
 	.connect {
-		padding: 0 5% 5% 5%;
 		margin-right: auto;
 		margin-left: auto;
 	}
