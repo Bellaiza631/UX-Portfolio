@@ -10,6 +10,7 @@
 html {
 	font-size: 10px;
 	font-family: sans-serif;
+	scroll-behavior: smooth;
 }
 body {
 	background-color: #ffffff;
@@ -198,6 +199,7 @@ body {
 	margin: 0 auto;
 	width: 93%;
 	height: 10rem;
+	cursor: pointer;
 }
 .top-menu-cs {
 	margin: 0 auto;
@@ -229,7 +231,7 @@ body {
 	color: #ffffff;
 	padding-bottom: 4rem;
 	animation-name: gradient;
-	animation: fadeIn 3s ease;
+	animation: fadeIn 5s ease;
 }
 .intro p {
 	font-family: 'Montserrat', serif;
@@ -239,7 +241,7 @@ body {
 	line-height: 125%;
 	color: #ffffff;
 	animation-name: gradient;
-	animation: fadeIn 3s ease;
+	animation: fadeIn 5s ease;
 }
 @keyframes fadeIn {
   0% {
@@ -251,7 +253,7 @@ body {
   }
 
   100% {
-    opacity: 0%;
+    opacity: 1;
   }
 }
 .mobile-view {
@@ -473,7 +475,10 @@ body {
 #button-cs:hover {
   background-color: #f37461;
 }
-
+#section-projects {
+	overflow-y: scroll;
+	scroll-behavior: smooth;
+}
 .row {
 	display: flex;
 }
@@ -604,7 +609,8 @@ body {
 /*-------------------------------------user personas-------------------------------------------------*/
 
 .avatar img {
-	width: 50%;
+	max-width: 50%;
+	padding-right: 5%;
 }
 .bold-persona {
 	font-weight: 500;
@@ -936,7 +942,7 @@ footer p {
 	line-height: 1.25;
 	color: #ffffff;
 	animation-name: gradient;
-	animation: fadeIn 3s ease;
+	animation: fadeIn 5s ease;
 }
 .about p {
 	font-family: 'Montserrat', serif;
@@ -947,7 +953,7 @@ footer p {
 	color: #ffffff;
 	padding-bottom: 3%;
 	animation-name: gradient;
-	animation: fadeIn 3s ease;
+	animation: fadeIn 5s ease;
 }
 
 @keyframes fadeIn {
@@ -960,7 +966,7 @@ footer p {
 }
 
 100% {
-	opacity: 0%;
+	opacity: 1;
 }
 }
 .first-line p {
@@ -1013,7 +1019,6 @@ footer p {
 	animation-name: gradient;
 	animation: gradient 5s ease infinite;
 	}
-}
 
 @keyframes gradient {
 from {background-color: #FE5A8A;}
@@ -1972,7 +1977,6 @@ font-weight: 700;
 	.site-nav-cs a:hover,
 	.site-nav-cs a:focus {
 		background: transparent;
-		color:
 	}
 }
 @media screen and (max-width: 1023px) {
@@ -2094,6 +2098,9 @@ textarea {
 	.connect {
 		margin-right: auto;
 		margin-left: auto;
+		width: 100%;
+		padding: 0 5%;
+		padding-bottom: 5%;
 	}
 	input {
 		width: 100%;
