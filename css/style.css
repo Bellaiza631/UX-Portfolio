@@ -1851,7 +1851,8 @@ font-weight: 700;
 .site-nav a:hover,
 .site-nav a:focus {
 	background: #E4B363;
-	color: #9676E0;
+	color: #b90791;
+	font-weight: bold;
 }
 /*---------------------------------------------------------------------------------*/
 
