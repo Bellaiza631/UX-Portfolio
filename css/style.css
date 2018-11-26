@@ -1807,27 +1807,15 @@ header::after {
 	clear: both;
 	display: block;
 }
-.logo {
-	float: left;
-	font-size: 1rem;
-	margin: 0;
-	text-transform: uppercase;
-	font-weight: 700;
-}
-.logo span {
-	font-weight: 400;
-}
 .site-nav {
-	padding-top: 4rem;
 	position: absolute;
 	right: 0%;
 	background: #DB6F8F;
-	clip-path: circle(0px at top right);
-	transition: clip-path ease-in-out 700ms;
+	height: 0px;
+	overflow: hidden;
 }
 .site-nav--open {
-	clip-path: circle(250% at top right);
-	/*   display: block; */
+	height: auto;
 }
 .site-nav ul {
 	margin: 0;
@@ -1941,7 +1929,7 @@ font-weight: 700;
 		position: relative;
 		background: transparent;
 		float: right;
-		clip-path: initial;
+		padding-top: 4rem;
 	}
 	.site-nav li {
 		display: inline-block;
@@ -1964,7 +1952,6 @@ font-weight: 700;
 		position: relative;
 		background: transparent;
 		float: right;
-		clip-path: initial;
 	}
 	.site-nav-cs li {
 		display: inline-block;
