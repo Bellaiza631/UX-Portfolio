@@ -1827,8 +1827,6 @@ header::after {
 }
 .site-nav ul li:hover,
 .site-nav:focus ul li{
-text-transform: uppercase;
-font-weight: 700;
 }
 .site-nav li:last-child {
 	border-bottom: none;
