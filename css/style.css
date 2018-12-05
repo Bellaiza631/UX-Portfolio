@@ -256,23 +256,22 @@ body {
     opacity: 1;
   }
 }
-.mobile-view {
-	font-family: 'Montserrat', sans-serif;
-	color: #3D3F43;
-	text-decoration: none;
-	text-align: center;
-	padding-bottom: 10%;
-	font-weight: 500;
-}
-/*------------------------------------Intro project.html---------------------------------------------------------------*/
 
-.intro-cs h1 {
-	font-family: 'Cardo', serif;
-	font-size: 7.2rem;
-	/*font-size: 5vw;*/
-	font-weight: bold;
-	color: #000000;
-	text-align: center;
+/*------------------------------------Intro project.html---------------------------------------------------------------*/
+.logo-ucconect-cs {
+  width: 300px;
+	height: auto;
+	margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+.logo-ucconect-cs img {
+	width: 100%;
+	height: auto;
+	padding-bottom: 5%;
+}
+.intro-cs {
+	padding-bottom: 40px;
 }
 .intro-cs p {
 	font-family: 'Montserrat', serif;
@@ -284,7 +283,7 @@ body {
 	line-height: 125%;
 	padding: 1% 10% 3% 10%;
 }
-.intro-cs button {
+.intro-cs a {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 1.8rem;
 	font-weight: bold;
@@ -298,8 +297,9 @@ body {
 	height: 50px;
 	display: block;
 	margin: 0 auto;
+	text-align: center;
 }
-#button-prototype:hover {
+.intro-cs a:hover {
   background-color: #0b3ea5;
 }
 .gradient-blue-backg {
@@ -408,7 +408,7 @@ body {
 .image-uconnect img {
 	width: 100%;
 	height: auto;
-	padding: 20% 0 0 10%;
+	padding: 20% 0 10% 10%;
 	/*padding: 16rem 0 6.4rem 6.6rem;*/
 }
 .image-uconnect a {
@@ -437,18 +437,21 @@ body {
 	max-height: 100%;
 	height: auto;
 }
+.logo-ucconect {
+  width: 190px;
+	height: 76px;
+	padding-bottom: 16px;
+}
+.logo-ucconect img {
+  max-width: 100%;
+	height: auto;
+}
 .project-uconnect {
 	background: linear-gradient(125deg, #FFE4E3 40%, #ffffff 0%);
 }
 .project-description {
-	padding: 15% 10% 5% 5%;
+	padding: 15% 10% 10% 5%;
 	/*padding: 23rem 16rem 21.3rem 8rem;*/
-}
-.project-description h2 {
-	font-family: 'cardo', sans-serif;
-	font-size: 7.2rem;
-	/*font-size: 5vw;*/
-	font-weight: bold;
 }
 .project-description p {
 	font-family: 'Montserrat', sans-serif;
@@ -458,7 +461,7 @@ body {
 	line-height: 125%;
 	padding: 5% 0 25% 0;
 }
-.project-description button {
+.project-description a {
 	font-family: 'Montserrat', sans-serif;
 	font-size: 1.8rem;
 	font-weight: bold;
@@ -472,7 +475,7 @@ body {
 	width: 265px;
 	height: 50px;
 }
-#button-cs:hover {
+.project-description a:hover {
   background-color: #f37461;
 }
 #section-projects {
@@ -890,7 +893,7 @@ footer h4 {
 	font-weight: bold;
 	font-size: 3.6rem;
 	/*font-size: 2.5vw;*/
-	padding-top: 5%;
+	padding-top: 4%;
 }
 footer p {
 	font-family: 'Montserrat', sans-serif;
@@ -900,8 +903,8 @@ footer p {
 }
 .social ul li {
 	display: inline-block;
-	padding-top: 8%;
-	padding-bottom: 3%;
+	padding-top: 4%;
+	padding-bottom: 4%;
 }
 .social ul li a {
 	color: #ffffff;
@@ -1017,7 +1020,7 @@ footer p {
 	opacity: 0.6;
 	/*z-index: 3;*/
 	animation-name: gradient;
-	animation: gradient 5s ease infinite;
+	animation: gradient 5s ease;
 	}
 
 @keyframes gradient {
@@ -1138,13 +1141,14 @@ to {background-color: #F6BA1F;}
 		font-size: 1.6rem;
 	}
 	.one-abtme {
-		height: 50%;
+		height: 100vh;
 	}
 	.two-abtme {
-		height: 50%;
+		height: 100vh;
 	}
 	.three-abtme {
-		height: 50%;
+		height: 100vh;
+		animation: none;
 	}
 }
 @media screen and (min-width: 1025px) {
@@ -1171,11 +1175,7 @@ to {background-color: #F6BA1F;}
 		height: 8rem;
 	}
 }
-@media screen and (min-width: 769px) {
-	.mobile-view {
-		visibility: hidden;
-	}
-}
+
 @media screen and (max-width: 420px) {
 	.arrow-down img {
 		width: 30px;
@@ -1207,11 +1207,23 @@ to {background-color: #F6BA1F;}
 		order: 2;
 	}
 	.image-uconnect img {
-		padding: 0 15%;
+		padding: 0 15% 5% 15%;
 	}
 	.col-md-45 {
 		width: 100%;
-		padding: 10% 10% 5% 10%;
+		padding: 10%;
+	}
+	.logo-ucconect img {
+	  max-width: 80%;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
+	.logo-ucconect {
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
 	}
 	.project-uconnect {
 		background: linear-gradient(108deg, #FFE4E3 45%, #ffffff 0%);
@@ -1219,22 +1231,31 @@ to {background-color: #F6BA1F;}
 	.project-description {
 		order: 1;
 	}
-	.project-description h2 {
-		text-align: center;
-		font-size: 3rem;
-	}
 	.project-description p {
 		padding-bottom: 2rem;
 		font-size: 1.8rem;
 	}
 	.project-description button {
-		display: none;
+		font-size: 1.2rem;
+    width: 150px;
+    height: 30px;
+    padding: 0;
+		margin-right: auto;
+    margin-left: auto;
+    display: block;
 	}
 	.project-description a {
-		left: 50%;
-		top: 50%;
-		position: absolute;
-	}
+		margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: 1.6rem;
+    background-color: #FF9788;
+    padding: 12px 0;
+    text-align: center;
+    text-decoration: none;
+    width: 200px;
+    height: 40px;
+  }
 	footer h4 {
 		font-size: 1.8rem;
 	}
@@ -1281,11 +1302,22 @@ to {background-color: #F6BA1F;}
 		order: 2;
 	}
 	.image-uconnect img {
-		padding: 0 15%;
+		padding: 0 15% 5% 15%;
 	}
 	.col-md-45 {
 		width: 100%;
-		padding: 10% 10% 5% 10%;
+		padding: 10%;
+	}
+	.logo-ucconect img {
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
+	}
+	.logo-ucconect {
+		margin-left: auto;
+		margin-right: auto;
+		display: block;
 	}
 	.project-uconnect {
 		background: linear-gradient(120deg, #FFE4E3 40%, #ffffff 0%);
@@ -1293,21 +1325,31 @@ to {background-color: #F6BA1F;}
 	.project-description {
 		order: 1;
 	}
-	.project-description h2 {
-		text-align: center;
-		font-size: 9.3vw;
-	}
+	.project-description a {
+		margin-left: auto;
+    margin-right: auto;
+    display: block;
+    font-size: 1.8rem;
+    background-color: #FF9788;
+    padding: 16px 0;
+    text-align: center;
+    text-decoration: none;
+    width: 250px;
+    height: 50px;
+  }
 	.project-description p {
 		padding-bottom: 2rem;
 		font-size: 3.1vw;
 	}
 	.project-description button {
-		display: none;
+		margin-right: auto;
+    margin-left: auto;
+    display: block;
 	}
 	.project-description a {
-		left: 50%;
-		top: 50%;
-		position: absolute;
+		margin-left: auto;
+    margin-right: auto;
+    display: block;
 	}
 	footer p {
 		font-size: 0.8rem;
@@ -1323,12 +1365,11 @@ to {background-color: #F6BA1F;}
 	.intro p {
 		font-size: 2.92vw;
 	}
-	.project-description h2 {
-		text-align: center;
-		font-size: 7.03vw;
+	.project-description {
+    padding: 10% 10% 10% 5%;
 	}
 	.project-description p {
-		padding-bottom: 2rem;
+		padding-bottom: 5rem;
 		font-size: 2.34vw;
 	}
 }
@@ -1340,12 +1381,8 @@ to {background-color: #F6BA1F;}
 	.intro p {
 		font-size: 2.08vw;
 	}
-	.project-description h2 {
-		text-align: center;
-		font-size: 5vw;
-	}
 	.project-description p {
-		padding-bottom: 2rem;
+		padding-bottom: 5rem;
 		font-size: 1.66vw;
 	}
 }
@@ -1391,19 +1428,22 @@ to {background-color: #F6BA1F;}
 		margin-right: auto;
 		padding-top: 5%;
 	}
-	.intro-cs h1 {
-		font-size: 2.4rem;
-		padding-bottom: 1.8rem;
-	}
 	.intro-cs p {
 		font-size: 1.6rem;
 		padding-bottom: 2rem;
 	}
-	.intro-cs button {
-		font-size: 1.2rem;
-		width: 150px;
-		height: 30px;
-		padding: 0;
+	.intro-cs a {
+		font-size: 1.6rem;
+		width: 200px;
+    height: 40px;
+		padding: 12px 0;
+	}
+	.logo-ucconect-cs {
+	  width: 150px;
+		height: auto;
+		margin-right: auto;
+	  margin-left: auto;
+	  display: block;
 	}
 	.row {
 		display: block;
@@ -1634,6 +1674,13 @@ to {background-color: #F6BA1F;}
 	}
 	.intro-cs p {
 		padding-bottom: 2rem;
+	}
+	.logo-ucconect-cs {
+	  width: 200px;
+		height: auto;
+		margin-right: auto;
+	  margin-left: auto;
+	  display: block;
 	}
 	.row {
 		display: block;
@@ -1999,7 +2046,7 @@ header::after {
 }
 .connect-message {
 	width: 50%;
-	padding: 15% 0 10% 10%;
+	padding: 7% 0 10% 10%;
 	font-size: 1.8rem;
 	font-family: 'Montserrat', sans-serif;
 	line-height: 125%;
@@ -2017,7 +2064,6 @@ header::after {
 .contact-form {
 	display: flex;
 	width: 100%;
-	height: auto;
 }
 #contact {
 	margin-right: auto;
@@ -2079,7 +2125,8 @@ textarea {
 	}
 	.connect-message {
 		margin-left: auto;
-		margin-right: auto
+		margin-right: auto;
+		padding: 7% 0;
 	}
 	.connect {
 		margin-right: auto;
@@ -2110,11 +2157,3 @@ textarea {
 	}
 }
 /*---------------------------------------------------------------------------------*/
-section {
-	opacity:0;
-}
-@media screen and (max-width: 1024px) {
-	section {
-		opacity:1;
-	}
-}
