@@ -1,4 +1,13 @@
-<?xml version="1.0"?>
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px" width="512px" height="512px" viewBox="0 0 451.847 451.847" style="enable-background:new 0 0 451.847 451.847;" xml:space="preserve"><g><g>
-	<path d="M225.923,354.706c-8.098,0-16.195-3.092-22.369-9.263L9.27,151.157c-12.359-12.359-12.359-32.397,0-44.751   c12.354-12.354,32.388-12.354,44.748,0l171.905,171.915l171.906-171.909c12.359-12.354,32.391-12.354,44.744,0   c12.365,12.354,12.365,32.392,0,44.751L248.292,345.449C242.115,351.621,234.018,354.706,225.923,354.706z" data-original="#000000" class="active-path" data-old_color="#ffffff" fill="#ffffff"/>
-</g></g> </svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512px" height="292px" viewBox="0 0 512 292" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
+    <title>arrow-down@2x</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Apple-devices-view" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-67.000000, -510.000000)" fill="#565162">
+            <g id="arrow-down" transform="translate(67.000000, 510.000000)">
+                <path d="M255.999433,292.013606 C246.823372,292.013606 237.648443,288.509978 230.652517,281.517452 L10.5040866,61.3667547 C-3.50022906,47.3624391 -3.50022906,24.6568418 10.5040866,10.6581918 C24.5027365,-3.34045816 47.2038013,-3.34045816 61.20925,10.6581918 L255.999433,205.459706 L450.79075,10.6649906 C464.795066,-3.3336594 487.493864,-3.3336594 501.491381,10.6649906 C515.502495,24.6636406 515.502495,47.3692378 501.491381,61.3735534 L281.34635,281.52425 C274.347025,288.51791 265.172096,292.013606 255.999433,292.013606 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>
