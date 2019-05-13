@@ -2598,48 +2598,17 @@ textarea {
 /*___________________________________Gato_________________________________________________*/
 
 .image1 {
-	width: 500px;
+	max-width: 1000px;
   height: auto;
-  padding-top: 200px;
-	position: absolute;
-	left: 500px;
+  padding-top: 20px;
+	margin-left: auto;
+	margin-right: auto;
 }
 .image1 img {
 	width: 100%;
 	height: auto;
 }
-.image2 {
-	width: 500px;
-  height: auto;
-  padding-top: 200px;
-	position: absolute;
-	left: 400px;
-}
-.image2 img {
-	width: 100%;
-	height: auto;
-}
-.image3 {
-	width: 600px;
-  height: auto;
-  padding-top: 50px;
-	position: absolute;
-	left: 300px;
-}
-.image3 img {
-	width: 100%;
-	height: auto;
-}
-.image4 {
-	width: 1000px;
-  height: auto;
-  padding-top: 100px;
-	position: absolute;
-}
-.image4 img {
-	width: 100%;
-	height: auto;
-}
+
 .coverletter {
 	padding-top: 10rem;
 	padding-bottom: 6rem;
@@ -2661,79 +2630,31 @@ font-weight: 300;
 line-height: 125%;
 color: #565162;
 padding-bottom:30px;
-animation: fadeInUp 2s ease;
 }
-.image4 a {
-	padding-left: 45%;
-  bottom: 50%;
+.coverletterlink{
+	text-align: center;
+	padding-top: 60px;
+}
+.coverletterlink a{
+	text-align: center;
 	font-family: 'Montserrat', serif;
 	font-size: 18px;
 	font-weight: bold;
 	color: #565162;
 }
+.image4 a {
+	font-family: 'Montserrat', serif;
+	font-size: 18px;
+	font-weight: bold;
+	color: #565162;
+}
+.portfolio-link {
+	text-align: center;
+}
 .portfolio-link a {
-	padding-left: 45%;
 	font-family: 'Montserrat', serif;
 	font-size: 18px;
 	font-weight: bold;
 	color: #565162;
 	padding-bottom: 100px;
-}
-
-@media screen and (min-width: 1300px) and (max-width: 1440px) {
-	.image2 img {
-		display: none;
-	}
-	.image3 img {
-		display: none;
-	}
-	.image4 img {
-		display: none;
-	}
-	.image4 a {
-		display: none;
-	}
-}
-@media screen and (min-width: 1200px) and (max-width: 1299px) {
-	.image1 img {
-		display: none;
-	}
-	.image3 img {
-		display: none;
-	}
-	.image4 img {
-		display: none;
-	}
-	.image4 a {
-		display: none;
-	}
-}
-@media screen and (min-width: 1040px) and (max-width: 1199px) {
-	.image1 img {
-		display: none;
-	}
-	.image2 img {
-		display: none;
-	}
-	.image4 img {
-		display: none;
-	}
-	.image4 a {
-		display: none;
-	}
-}
-@media screen and (max-width: 1039px) {
-	.image1 img {
-		display: none;
-	}
-	.image2 img {
-		display: none;
-	}
-	.image3 img {
-		display: none;
-	}
-}
-
-@media screen and (max-width: 415px) {
-
 }
