@@ -1,303 +1,129 @@
-
-
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="robots" content="noindex, nofollow">
-    <title>Password Protected Page</title>
-    <style>
-        html, body {
-            margin: 0;
-            width: 100%;
-            height: 100%;
-            font-family: 'Montserrat', sans-serif;
-						color: #565162;
 
-        }
-        #dialogText {
-            color: white;
-            background-color: #977597;
-        }
+<html lang="en" dir="ltr">
 
-        #dialogWrap {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: table;
-            background-color: #eae2ee;
-        }
+<head>
+	<meta charset="utf-8">
+	<title>Portfolio | Izabella Timmons</title>
+	<link rel="shortcut icon" type="images/png" href="images/logo.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cardo:400,400i,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="icons/flaticon.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-        #dialogWrapCell {
-            display: table-cell;
-            text-align: center;
-            vertical-align: middle;
-        }
+</head>
 
-        #mainDialog {
-            max-width: 400px;
-            margin: 5px;
-            border: solid #AAAAAA 1px;
-            border-radius: 10px;
-            box-shadow: 3px 3px 5px 3px #AAAAAA;
-            margin-left: auto;
-            margin-right: auto;
-            background-color: #FFFFFF;
-            overflow: hidden;
-            text-align: left;
-        }
-        #mainDialog > * {
-            padding: 10px 30px;
-        }
-        #passArea {
-            padding: 20px 30px;
-            background-color: white;
-        }
-        #passArea > * {
-            margin: 5px auto;
-        }
-        #pass {
-            width: 100%;
-            height: 40px;
-            font-size: 30px;
-        }
+<body>
+	<div class="container">
+		<div class="section-main image-hero">
+		<header class="header">
+     <div class="top-menu">
+       <a href="index.html">
+         <img src="images/logo.svg" alt="logo" class="logo">
+       </a>
+       <nav class="site-nav">
+         <ul>
+           <li><a href="home.html">Home</a>
+           </li>
+           <li><a href="about.html">About</a>
+           </li>
+           <li><a href="#section-projects">Work</a>
+           </li>
+           <li><a href="https://drive.google.com/file/d/1Ax9zsWiG5xhfRfdqqbccI_9nNUF_RHW_/view?usp=sharing" target="_blank">Resume</a>
+           </li>
+           <li><a href="contact.html">Contact me</a>
+           </li>
+         </ul>
+       </nav>
+       <div class="menu-toggle">
+         <div class="hamburger"></div>
+       </div>
+     </div>
+		  </header>
+     <div class="intro animated animatedFadeInUp fadeInUp">
+			    <p>Hello!</p>
+					<h1>I’m Izabella Timmons,<br>a UI/UX Designer <br> based in Florida.</h1>
+					<p>I have a passion for creating a stunning, simple design to translate complex problems into engaging experiences.</p>
+		 </div>
+		 <div class="arrow-down">
+					<a href="#section-projects"><img src="images/arrow-down.svg" alt="Arrow"></a>
+		 </div>
+ </div>
+		<main id="section-projects" class="projects">
+			<section class="project row-index">
+				<div class="col-md-55  image-uconnect">
+					<img src="images2/IBM_Catalog.png" alt="uconnect project">
+				</div>
+				<div class="col-md-45  project-description">
+					<div class="logo-ucconect">
+						<img src="images2/IBM_Logo1.png" alt="Logo uconnect">
+					</div>
+					<p>In the IBM Cloud catalog, users can find, try, buy, and deploy software and services that they need to build new solutions and manage cloud infrastructure.</p>
+					<a href="projectIBMCat.html">Learn more</a>
+				</div>
+			</section>
+			<section class="project row-index">
+				<div class="col-md-45  project-description-oceanleaf">
+					<div class="logo-ucconect">
+						<img src="images2/FinalLogoBlue.png" alt="Logo ocean leaf">
+					</div>
+					<p>Ocean Leaf is a website about reducing plastic pollution in the oceans through awareness, and to build an online marketplace for biodegradable everyday products to replace plastic.</p>
+					<a href="project2.html">Learn more</a>
+				</div>
+				<div class="col-md-55  image-oceanleaf">
+					<img src="images2/oceanleaf2x.png" alt="ocean leaf project">
+				</div>
+			</section>
+			<section class="project row-index">
+				<div class="col-md-55  image-uconnect">
+					<img src="images/ucconect.png" alt="uconnect project">
+				</div>
+				<div class="col-md-45  project-description">
+					<div class="logo-ucconect">
+						<img src="images/logo-uconnect.svg" alt="Logo uconnect">
+					</div>
+					<p>Cloud service storage that allows users to store files on their servers, synchronize files across devices and share files.</p>
+					<a href="project.html">Learn more</a>
+				</div>
+			</section>
+		</main>
+		<footer>
+			<h4>Get in touch</h4>
+			<div class="social">
+				<ul class="icons-social">
+					<li>	<a href="https://www.linkedin.com/in/izabella-timmons-b2116453/"><i class="flaticon-linkedin"></i>
+					</a>
+					</li>
+					<li>	<a href="https://www.behance.net/bellaiza63c4d4"><i class="flaticon-behance"></i>
+					</a>
+					</li>
+					<li>	<a href="https://github.com/Bellaiza631"><i class="flaticon-github"></i>
+					</a>
+					</li>
+					<li>	<a href="https://twitter.com/Izabell23351266"><i class="flaticon-twitter"></i>
+					</a>
+					</li>
+					<li>	<a href="contact.html"><i class="flaticon-mail"></i>
+					</a>
+					</li>
+				</ul>
+			</div>
+			<p>Designed and developed by Izabella Timmons | © Copyright 2019</p>
+		</footer>
+	</div>
+	  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-128981519-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'UA-128981519-1');
+  </script>
 
-        #messageWrapper {
-            float: left;
-            vertical-align: middle;
-            line-height: 30px;
-        }
+	<script src="js/design.js"></script>
+</body>
 
-        .notifyText {
-            display: none;
-        }
-
-        #invalidPass {
-            color: red;
-        }
-
-        #success {
-            color: green;
-        }
-
-        #submitPass {
-            font-size: 20px;
-            border-radius: 5px;
-            background-color: #E7E7E7;
-            border: solid gray 1px;
-            float: right;
-            cursor: pointer;
-        }
-        #contentFrame {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-        }
-        #attribution {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            text-align: center;
-            padding: 10px;
-            font-weight: bold;
-            font-size: 0.8em;
-        }
-        #attribution, #attribution a {
-            color: #999;
-        }
-        .error {
-            display: none;
-            color: red;
-        }
-    </style>
-  </head>
-  <body>
-    <iframe id="contentFrame" frameBorder="0" allowfullscreen></iframe>
-    <div id="dialogWrap">
-        <div id="dialogWrapCell">
-            <div id="mainDialog">
-                <div id="dialogText">Izabella Timmons's portfolio.</div>
-                <div id="passArea">
-                    <p id="passwordPrompt">Password</p>
-                    <input id="pass" type="password" name="pass" autofocus>
-                    <div>
-                        <span id="messageWrapper">
-                            <span id="invalidPass" class="error">Sorry, please try again.</span>
-                            <span id="trycatcherror" class="error">Sorry, something went wrong.</span>
-                            <span id="success" class="notifyText">Success!</span>
-                            &nbsp;
-                        </span>
-                        <button id="submitPass" type="button">Submit</button>
-                        <div style="clear: both;"></div>
-                    </div>
-                </div>
-                <div id="securecontext" class="error">
-                    <p>
-                        Sorry, but password protection only works over a secure connection. Please load this page via HTTPS.
-                    </p>
-                </div>
-                <div id="nocrypto" class="error">
-                    <p>
-                        Your web browser appears to be outdated. Please visit this page using a modern browser.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="attribution">
-        Protected by <a href="https://www.maxlaumeister.com/pagecrypt/">PageCrypt</a>
-    </div>
-    <script>
-    (function() {
-
-        var pl = "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";
-
-        var submitPass = document.getElementById('submitPass');
-        var passEl = document.getElementById('pass');
-        var invalidPassEl = document.getElementById('invalidPass');
-        var trycatcherror = document.getElementById('trycatcherror');
-        var successEl = document.getElementById('success');
-        var contentFrame = document.getElementById('contentFrame');
-
-        // Sanity checks
-
-        if (pl === "") {
-            submitPass.disabled = true;
-            passEl.disabled = true;
-            alert("This page is meant to be used with the encryption tool. It doesn't work standalone.");
-            return;
-        }
-
-        if (!isSecureContext) {
-            document.querySelector("#passArea").style.display = "none";
-            document.querySelector("#securecontext").style.display = "block";
-            return;
-        }
-
-        if (!crypto.subtle) {
-            document.querySelector("#passArea").style.display = "none";
-            document.querySelector("#nocrypto").style.display = "block";
-            return;
-        }
-
-        function str2ab(str) {
-            var ustr = atob(str);
-            var buf = new ArrayBuffer(ustr.length);
-            var bufView = new Uint8Array(buf);
-            for (var i=0, strLen=ustr.length; i < strLen; i++) {
-                bufView[i] = ustr.charCodeAt(i);
-            }
-            return bufView;
-        }
-
-        async function deriveKey(salt, password) {
-            const encoder = new TextEncoder()
-            const baseKey = await crypto.subtle.importKey(
-                'raw',
-                encoder.encode(password),
-                'PBKDF2',
-                false,
-                ['deriveKey'],
-            )
-            return await crypto.subtle.deriveKey(
-                { name: 'PBKDF2', salt, iterations: 100000, hash: 'SHA-256' },
-                baseKey,
-                { name: 'AES-GCM', length: 256 },
-                true,
-                ['decrypt'],
-            )
-        }
-
-        async function doSubmit(evt) {
-            submitPass.disabled = true;
-            passEl.disabled = true;
-
-            let iv, ciphertext, key;
-
-            try {
-                var unencodedPl = str2ab(pl);
-
-                const salt = unencodedPl.slice(0, 32)
-                iv = unencodedPl.slice(32, 32 + 16)
-                ciphertext = unencodedPl.slice(32 + 16)
-
-                key = await deriveKey(salt, passEl.value);
-            } catch (e) {
-                trycatcherror.style.display = "inline";
-                console.error(e);
-                return;
-            }
-
-            try {
-                const decryptedArray = new Uint8Array(
-                    await crypto.subtle.decrypt({ name: 'AES-GCM', iv }, key, ciphertext)
-                );
-
-                let decrypted = new TextDecoder().decode(decryptedArray);
-
-                if (decrypted === "") throw "No data returned";
-
-                const basestr = '<base href="." target="_top">';
-                const anchorfixstr = `
-                    <script>
-                        Array.from(document.links).forEach((anchor) => {
-                            const href = anchor.getAttribute("href");
-                            if (href.startsWith("#")) {
-                                anchor.addEventListener("click", function(e) {
-                                    e.preventDefault();
-                                    const targetId = this.getAttribute("href").substring(1);
-                                    const targetEl = document.getElementById(targetId);
-                                    targetEl.scrollIntoView();
-                                });
-                            }
-                        });
-                    <\/script>
-                `;
-
-                // Set default iframe link targets to _top so all links break out of the iframe
-                if (decrypted.includes("<head>")) decrypted = decrypted.replace("<head>", "<head>" + basestr);
-                else if (decrypted.includes("<!DOCTYPE html>")) decrypted = decrypted.replace("<!DOCTYPE html>", "<!DOCTYPE html>" + basestr);
-                else decrypted = basestr + decrypted;
-
-                // Fix fragment links
-                if (decrypted.includes("</body>")) decrypted = decrypted.replace("</body>", anchorfixstr + '</body>');
-                else if (decrypted.includes("</html>")) decrypted = decrypted.replace("</html>", anchorfixstr + '</html>');
-                else decrypted = decrypted + anchorfixstr;
-
-                contentFrame.srcdoc = decrypted;
-
-                successEl.style.display = "inline";
-                setTimeout(function() {
-                    dialogWrap.style.display = "none";
-                }, 1000);
-            } catch (e) {
-                invalidPassEl.style.display = "inline";
-                passEl.value = "";
-                submitPass.disabled = false;
-                passEl.disabled = false;
-                console.error(e);
-                return;
-            }
-        }
-
-        submitPass.onclick = doSubmit;
-        passEl.onkeypress = function(e){
-            if (!e) e = window.event;
-            var keyCode = e.keyCode || e.which;
-            invalidPassEl.style.display = "none";
-            if (keyCode == '13'){
-              // Enter pressed
-              doSubmit();
-              return false;
-            }
-        }
-    })();
-    </script>
-  </body>
 </html>
