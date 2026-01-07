@@ -227,7 +227,8 @@ body {
 	line-height: 1.25;
 	color: #565162;
 	animation-name: gradient;
-	max-width: 400px;
+	max-width: 600px;
+	margin-bottom: 20px;
 }
 
 
@@ -565,6 +566,7 @@ body {
 .project {
 	width: 100%;
 	height: auto;
+	font-size: 2.5rem;
 }
 #section-projects {
 	/*overflow-y: scroll;*/
@@ -1597,6 +1599,9 @@ footer p {
 	.project-description-oceanleaf p {
 		padding: 20px 0 40px 0;
     text-align: center;
+	}
+	.project-description-oceanleaf h2 {
+        text-align: center;
 	}
 	footer p {
 		font-size: 0.8rem;
