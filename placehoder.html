@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<title>Deployable Architecture Experience | Izabella Timmons</title>
+	<link rel="shortcut icon" type="image/png" href="images/logo.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cardo:400,400i,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="icons/flaticon.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<!-- Password Protection Overlay -->
+	<div id="password-gate" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #b7a0eb; z-index: 10000; display: flex; align-items: center; justify-content: center;">
+		<div style="background: white; padding: 40px 50px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+			<h2 style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 600; color: #333; margin-bottom: 5px; text-align: center;">🔒 Protected Work</h2>
+			<p style="font-family: 'Montserrat', sans-serif; font-size: 13px; color: #999; margin-bottom: 20px; text-align: center; font-weight: 500;">IBM NDA Required</p>
+			<p style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #666; margin-bottom: 25px; text-align: center; line-height: 1.5;">This case study contains confidential work. Password provided to hiring managers in application materials.</p>
+			<input type="password" id="password-input" placeholder="Enter password" style="width: 100%; padding: 12px 15px; font-family: 'Montserrat', sans-serif; font-size: 16px; border: 2px solid #ddd; border-radius: 6px; margin-bottom: 15px; box-sizing: border-box;" />
+			<button onclick="checkPassword()" style="width: 100%; padding: 12px; background: #3638DE; color: white; border: none; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.3s;">Submit</button>
+			<p id="error-message" style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #dc3545; margin-top: 15px; text-align: center; display: none;">Incorrect password. Please try again.</p>
+			<a href="index.html" style="display: block; text-align: center; margin-top: 20px; font-family: 'Montserrat', sans-serif; font-size: 14px; color: #3638DE; text-decoration: none;">← Back to Portfolio</a>
+		</div>
+	</div>
+
+	<div class="container" id="main-content" style="display: none;">
+		<header id="hero" class="header-cs">
+			<div class="top-menu">
+				<a href="index.html">
+					<img src="images/logo.svg" alt="logo" class="logo">
+				</a>
+				<nav class="site-nav site-nav-cs">
+					<ul>
+						<li><a href="index.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="index.html#section-projects">Work</a></li>
+						<li><a href="https://izabellatimmons.com/IzabellaTimmonsResume-port.pdf" target="_blank">Resume</a></li>
+						<li><a href="contact.html">Contact me</a></li>
+					</ul>
+				</nav>
+				<div class="menu-toggle">
+					<div class="hamburger-cs"></div>
+				</div>
+			</div>
+			<div class="intro-project">
+				<div class="imageoceanleaf">
+					<img src="images2/DeployableArch.png" alt="Deployable Architecture">
+				</div>
+				<div class="intro-cs">
+					<div class="logo-oceanleaf">
+						<img src="images2/IBM_Logo1.png" alt="IBM Logo">
+					</div>
+					<p>As design lead, I optimized IBM's Deployable Architecture experience to accelerate adoption, driving 63% deployment growth. Achieved 81.25/100 satisfaction score, 91.25% usability rating, and 6.25/7 confidence score, validating the redesign's effectiveness.</p>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<section class="row">
+				<div class="wrap" style="text-align: center; padding: 100px 20px;">
+					<h2 style="font-family: 'Montserrat', sans-serif; font-size: 32px; font-weight: 600; color: #333; margin-bottom: 20px;">Case Study Coming Soon</h2>
+					<p style="font-family: 'Montserrat', sans-serif; font-size: 18px; color: #666; line-height: 1.6; max-width: 600px; margin: 0 auto 40px;">This project case study is currently under development. Please check back soon or contact me for more details about this work.</p>
+					<a href="index.html" style="display: inline-block; padding: 12px 30px; background: #3638DE; color: white; text-decoration: none; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 600;">Back to Portfolio</a>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<h4>Get in touch</h4>
+			<div class="social">
+				<ul class="icons-social">
+					<li><a href="https://www.linkedin.com/in/izabella-timmons-b2116453/"><i class="flaticon-linkedin"></i></a></li>
+					<li><a href="https://www.behance.net/bellaiza63c4d4"><i class="flaticon-behance"></i></a></li>
+					<li><a href="https://github.com/Bellaiza631"><i class="flaticon-github"></i></a></li>
+					<li><a href="https://twitter.com/Izabell23351266"><i class="flaticon-twitter"></i></a></li>
+					<li><a href="contact.html"><i class="flaticon-mail"></i></a></li>
+				</ul>
+			</div>
+			<p>Designed and developed by Izabella Timmons | © Copyright 2019</p>
+		</footer>
+	</div> <!-- Close main-content -->
+
+<script>
+// Password protection
+// Password protection with Base64 encoding (for portfolio protection only)
+// Note: Client-side protection is not cryptographically secure
+const correctPassword = atob("TXlwcm9qZWN0czIwMjZJVCE=");
+
+function checkPassword() {
+	const input = document.getElementById('password-input').value;
+	const errorMsg = document.getElementById('error-message');
+	
+	if (input === correctPassword) {
+		// Store in sessionStorage so it persists during the session
+		sessionStorage.setItem('projectAccess', 'granted');
+		showContent();
+	} else {
+		errorMsg.style.display = 'block';
+		document.getElementById('password-input').value = '';
+		document.getElementById('password-input').focus();
+	}
+}
+
+function showContent() {
+	document.getElementById('password-gate').style.display = 'none';
+	document.getElementById('main-content').style.display = 'block';
+}
+
+// Check if already authenticated in this session
+window.onload = function() {
+	if (sessionStorage.getItem('projectAccess') === 'granted') {
+		showContent();
+	}
+	
+	// Allow Enter key to submit
+	document.getElementById('password-input').addEventListener('keypress', function(e) {
+		if (e.key === 'Enter') {
+			checkPassword();
+		}
+	});
+};
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128981519-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-128981519-1');
+</script>
+
+<script src="js/design.js"></script>
+</body>
+
+</html>

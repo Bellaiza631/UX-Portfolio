@@ -1,0 +1,1732 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<title>Cloud Service Onboarding Tool Migration | Izabella Timmons</title>
+	<link rel="shortcut icon" type="image/png" href="images/logo.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cardo:400,400i,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="icons/flaticon.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<!-- Password Protection Overlay -->
+	<div id="password-gate" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #b7a0eb; z-index: 10000; display: flex; align-items: center; justify-content: center;">
+		<div style="background: white; padding: 40px 50px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+			<h2 style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 600; color: #333; margin-bottom: 5px; text-align: center;">🔒 Protected Work</h2>
+			<p style="font-family: 'Montserrat', sans-serif; font-size: 13px; color: #999; margin-bottom: 20px; text-align: center; font-weight: 500;">IBM NDA Required</p>
+			<p style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #666; margin-bottom: 25px; text-align: center; line-height: 1.5;">This case study contains confidential work. Password provided to hiring managers in application materials.</p>
+			<input type="password" id="password-input" placeholder="Enter password" style="width: 100%; padding: 12px 15px; font-family: 'Montserrat', sans-serif; font-size: 16px; border: 2px solid #ddd; border-radius: 6px; margin-bottom: 15px; box-sizing: border-box;" />
+			<button onclick="checkPassword()" style="width: 100%; padding: 12px; background: #3638DE; color: white; border: none; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.3s;">Submit</button>
+			<p id="error-message" style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #dc3545; margin-top: 15px; text-align: center; display: none;">Incorrect password. Please try again.</p>
+			<a href="index.html" style="display: block; text-align: center; margin-top: 20px; font-family: 'Montserrat', sans-serif; font-size: 14px; color: #3638DE; text-decoration: none;">← Back to Portfolio</a>
+		</div>
+	</div>
+
+	<div class="container" id="main-content" style="display: none;">
+		<header id="hero" class="header-cs">
+			<div class="top-menu">
+				<a href="index.html">
+					<img src="images/logo.svg" alt="logo" class="logo">
+				</a>
+				<nav class="site-nav site-nav-cs">
+					<ul>
+						<li><a href="index.html">Home</a>
+						</li>
+						<li><a href="about.html">About</a>
+						</li>
+						<li><a href="index.html#section-projects">Work</a>
+						</li>
+						<li><a href="https://izabellatimmons.com/IzabellaTimmonsResume-port.pdf" target="_blank">Resume</a>
+						<li><a href="contact.html">Contact me</a>
+						</li>
+					</ul>
+				</nav>
+				<div class="menu-toggle">
+					<div class="hamburger-cs"></div>
+				</div>
+			</div>
+			<div class="intro-project">
+				<div class="imageoceanleaf">
+					<img src="images2/RMC.png" alt="RMC Tool Migration">
+				</div>
+				<div class="intro-cs">
+					<div class="logo-oceanleaf">
+						<img src="images2/IBM_Logo1.png" alt="IBM Logo">
+					</div>
+					<p>IBM's current tool for onboarding and managing services on the IBM Cloud Marketplace, Resource Management Console (RMC), has become a critical bottleneck for service teams launching products on IBM Cloud.
+						<br>While RMC handled essential functions such as catalog listings, pricing configuration, and approval tracking, its outdated infrastructure couldn't support modern enhancements, violates compliance standards, and has high costs per month to be maintained.<br></p>
+				</div>
+			</div>
+		</header>
+		<main>
+			<section class="row">
+				<div class="wrap-padding problem-solution col-md-6">
+					<h2>Problem</h2>
+					<p>IBM maintained two separate onboarding tools: RMC for first-party services (legacy, <strong>$45K/month</strong>) and Partner Center for third-party products. RMC violated compliance standards and couldn't support modern enhancements.</p>
+					<p>Teams struggled with fragmented tools and unclear processes, forcing SMEs to provide repetitive guidance—delaying launches and causing compliance gaps.</p>
+				</div>
+				<div class="wrap-padding problem-solution col-md-6n">
+					<h2>Solution</h2>
+					<p>Redesigned Partner Center to unify first-party and third-party onboarding. Consolidated fragmented workflows into guided wizards, centralized dashboards, dynamic checklists, and transparent approval flows.</p>
+					<p>Reduced onboarding time from 9-12 months to 1-3 months (<strong>~80% faster</strong>) and delivered <strong>$540K</strong> in annual savings with zero service disruption.</p>
+				</div>
+			</section>
+			
+			<section class="row">
+				<div class="wrap">
+					<div class="nda-notice" style="background: #FFF9E6; border-left: 4px solid #F57C00; padding: 20px 25px; border-radius: 6px; margin: 20px 0;">
+						<p style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #666; line-height: 1.6; margin: 0;"><strong style="color: #F57C00;">⚠️ Confidentiality Notice:</strong> This case study has been modified to protect proprietary information. Specific metrics have been approximated and sensitive screenshots redacted in accordance with IBM NDA requirements.</p>
+					</div>
+				</div>
+			</section>
+			
+			<section class="row role-del-tools">
+				<div class="roles col-md-4">
+					<h2>My Role</h2>
+					<ul>
+						<li>Lead Product Designer</li>
+					</ul>
+				</div>
+				<div class="deliverables col-md-4">
+					<h2>Duration & Team</h2>
+					<ul>
+						<li>2 years</li>
+						<li>Product Manager</li>
+						<li>Researcher</li>
+						<li>Developers</li>
+						<li>Architect</li>
+					</ul>
+				</div>
+				<div class="tools col-md-4">
+					<h2>Tools</h2>
+					<ul>
+						<li>Figma</li>
+						<li>Mural</li>
+						<li>Slack</li>
+					</ul>
+				</div>
+			</section>
+
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>My role</h2>
+					</div>
+					<p style="font-family: 'Montserrat', sans-serif; line-height: 1.8; color: #555; margin-bottom: 20px; max-width: 1200px;">As the <strong>Lead Product Designer over two years</strong>, I led the migration of RMC capabilities to Partner Center, working closely with a product manager, researcher, developers, and an architect.</p>
+					<p style="font-family: 'Montserrat', sans-serif; line-height: 1.8; color: #555; max-width: 1200px;">The core design challenge was transforming what started as a simple technical migration into a complete reimagine of the onboarding experience—moving from a broken ecosystem of fragmented tools, unclear processes, and scattered workflows to a unified, intuitive platform.</p>
+				</div>
+			</section>
+
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Impact & Results</h2>
+					</div>
+					<div class="impact-cards">
+						<div class="impact-card">
+							<div class="impact-header">
+								<span class="checkmark">✓</span>
+								<h3>Business value</h3>
+							</div>
+							<ul>
+								<li><strong>$540K</strong> annual savings from retiring RMC infrastructure</li>
+								<li>Improved compliance—Partner Center meets current requirements</li>
+								<li>Single platform for first-party and third-party onboarding</li>
+							</ul>
+						</div>
+						<div class="impact-card">
+							<div class="impact-header">
+								<span class="checkmark">✓</span>
+								<h3>User efficiency</h3>
+							</div>
+							<ul>
+								<li>Onboarding: <strong>9-12 months → 1-3 months</strong> (~80% faster)</li>
+								<li><strong>60% fewer</strong> 60% reduction in SME support requests — teams can self-serve through guided workflows</li>
+								<li>Instant executive reporting—dashboard replaces manual prep</li>
+							</ul>
+						</div>
+						<div class="impact-card">
+							<div class="impact-header">
+								<span class="checkmark">✓</span>
+								<h3>User satisfaction</h3>
+							</div>
+							<ul>
+								<li><strong>100% task completion</strong> in usability testing (8 participants)</li>
+								<li>Service Framework perceived as "less intimidating"</li>
+								<li>"Huge impact on reducing time spent reporting" — Release Manager</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="c">
+				<div class="chapter">
+					<div class="number">
+						<h1>01</h1>
+					</div>
+					<div class="name">
+						<h2>Research & Discovery</h2>
+					</div>
+				</div>
+			</section>
+
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Research Process</h2>
+					</div>
+					<div class="research-layout">
+						<div class="research-text">
+							<h3>Methods</h3>
+							<ul>
+								<li>User interviews with 50 participants</li>
+								<li>Collaborative workshops</li>
+								<li>Usability testing sessions</li>
+							</ul>
+							
+							<h3>Participants</h3>
+							<ul>
+								<li>Service Provider teams (product developers, architects, PMs)</li>
+								<li>Pillar Focals and Subject Matter Experts (reviewers/approvers)</li>
+								<li>Service Framework program managers</li>
+							</ul>
+							
+							<h3>Goal</h3>
+							<p>Map the end-to-end onboarding journey to identify systemic pain points beyond RMC's technical limitations.</p>
+						</div>
+						<div class="research-image">
+							<img src="RMCimg/Journeymap.png" alt="User Journey Map">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="row personas">
+				<div class="wrap">
+					<div class="title">
+						<h2>Personas</h2>
+					</div>
+					<div class="flows-description">
+						<p>Based on research with 50 participants, I created two personas representing our primary users: Product Managers launching services and Security Directors reviewing compliance.</p>
+					</div>
+					<div class="teste row">
+						<div class="twoteste">
+							<div class="padding">
+								<div class="avatar-teste">
+									<!-- PLACEHOLDER: Add persona image -->
+									<img src="RMCimg/lisa.png" alt="Lisa M">
+									<p class="bold-persona-ol">Lisa M</p>
+									<p>Product Manager</p>
+								</div>
+								<div class="avatar-quoteteste">
+									<p>"I don't know how long it takes to complete the process, and what does it take. Navigating service framework is hard for entire team and I don't read it because I'm over assigned."</p>
+								</div>
+								<div class="frustration">
+									<p class="bold-persona">Role</p>
+									<ul class="persona-body">
+										<li>Product managers, product developers, and architects launching services on IBM Cloud</li>
+									</ul>
+								</div>
+								<div class="goal">
+									<p class="bold-persona">Goals</p>
+									<ul class="persona-body">
+										<li>Understand which requirements apply to their specific product</li>
+										<li>Complete onboarding efficiently to meet release deadlines</li>
+										<li>Track progress clearly throughout the lifecycle</li>
+									</ul>
+								</div>
+								<div class="goal">
+									<p class="bold-persona">Frustrations</p>
+									<ul class="persona-body">
+										<li>Overwhelmed by extensive documentation without clear guidance</li>
+										<li>Can't gauge effort, timelines, or see value in requirements</li>
+										<li>Must juggle multiple tools with no centralized tracking</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="twoteste">
+							<div class="padding">
+								<div class="avatar-teste">
+									<!-- PLACEHOLDER: Add persona image -->
+									<img src="RMCimg/john.png" alt="John J">
+									<p class="bold-persona-ol">John J</p>
+									<p>Security Program Director</p>
+								</div>
+								<div class="avatar-quoteteste">
+									<p>"Teams are often so overwhelmed by the amount of information. This leads teams to immediately schedule one-on-one meetings with requirement focals to ask them what to do."</p>
+								</div>
+								<div class="frustration">
+									<p class="bold-persona">Role</p>
+									<ul class="persona-body">
+										<li>Pillar Focals & SMEs: Reviewers and approvers who verify compliance and provide guidance</li>
+									</ul>
+								</div>
+								<div class="goal">
+									<p class="bold-persona">Goals</p>
+									<ul class="persona-body">
+										<li>Verify teams have completed requirements with proper evidence</li>
+										<li>Maintain security and compliance standards across the portfolio</li>
+										<li>Report progress to executive leadership</li>
+									</ul>
+								</div>
+								<div class="goal">
+									<p class="bold-persona">Frustrations</p>
+									<ul class="persona-body">
+										<li>Overwhelmed answering repetitive questions from dozens of teams</li>
+										<li>Can't easily find evidence scattered across multiple GitHub repos</li>
+										<li>No centralized way to track lifecycle requirements or hold teams accountable</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Key Research Findings</h2>
+					</div>
+					
+					<!-- Finding 1: Process Understanding Crisis -->
+					<div class="research-layout findings-section">
+						<div class="research-text">
+							<h3>Process Understanding Crisis</h3>
+							<p>Teams struggle with extensive, outdated documentation lacking clear journey visibility.</p>
+							
+							<p><strong>Evidence:</strong></p>
+							<ul>
+								<li>Teams skip requirements due to overwhelming volume</li>
+								<li>SMEs overwhelmed with manual kick-off meetings</li>
+								<li>No way to measure velocity or set timeline expectations</li>
+							</ul>
+							
+							<p><strong>Impact:</strong> Teams bypass requirements or delay releases, creating security risks.</p>
+						</div>
+						<div class="research-image">
+							<img src="RMCimg/Fiding1.png" alt="Process Understanding Crisis">
+						</div>
+					</div>
+					
+					<!-- Finding 2: Evidence Documentation Fragmentation -->
+					<div class="research-layout findings-section">
+						<div class="research-text">
+							<h3>Evidence Documentation Fragmentation</h3>
+							<p>Requirements and evidence scattered across individual GitHub repos make verification nearly impossible.</p>
+							
+							<p><strong>Evidence:</strong></p>
+							<ul>
+								<li>Each team uses separate repos with the Issue Creator tool</li>
+								<li>Non-developers miss requirements in GitHub</li>
+								<li>Reviewers must check multiple repos with no centralized view</li>
+								<li>Evidence lost when team members leave IBM</li>
+							</ul>
+							
+							<p><strong>Impact:</strong> Products reach customers without proper quality assurance.</p>
+						</div>
+						<div class="research-image">
+							<img src="RMCimg/Fiding2.png" alt="Evidence Documentation Fragmentation">
+						</div>
+					</div>
+					
+					<!-- Finding 3: Communication & Accountability Breakdown -->
+					<div class="research-layout findings-section">
+						<div class="research-text">
+							<h3>Communication & Accountability Breakdown</h3>
+							<p>No centralized system to communicate updates, track requirements, or maintain accountability.</p>
+							
+							<p><strong>Evidence:</strong></p>
+							<ul>
+								<li>Updates scattered across Slack, meetings, and spreadsheets</li>
+								<li>Teams miss announcements about new requirements</li>
+								<li>No accurate tracking for executive reporting</li>
+							</ul>
+							
+							<p><strong>Impact:</strong> Slow adoption of critical requirements and missed annual reviews.</p>
+						</div>
+						<div class="research-image">
+							<img src="RMCimg/Fiding3.png" alt="Communication & Accountability Breakdown">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="row">
+				<div class="wrap">					
+					<div class="before-after-grid">
+						<!-- RMC (Legacy Tool) -->
+						<div class="before-after-item">
+							<div class="label-tag legacy">LEGACY SYSTEM</div>
+							<h3>Resource Management Console (RMC)</h3>
+							<div class="comparison-image">
+								<img src="RMCimg/RMCBefore.png"RMC Legacy Interface">
+							</div>
+						</div>
+
+						<!-- Old Partner Center -->
+						<div class="before-after-item">
+							<div class="label-tag before">BEFORE REDESIGN</div>
+							<h3>Partner Center (Original)</h3>
+							<div class="comparison-image">
+								<img src="RMCimg/PCbefore.png" alt="Old Partner Center">
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Brainstorm Workshop</h2>
+					</div>
+					<div class="research-layout">
+						<div class="research-text">
+							<h3>How might we...</h3>
+							<p>...enable product teams to quickly understand the overall process and which requirements are relevant to them without relying on Pillar Focals and SMEs?</p>
+							
+							<h3>How might we...</h3>
+							<p>...enable product teams to securely document evidence for requirements or share information with Pillar Focals or SMEs that is easy to locate?</p>
+							
+							<h3>How might we...</h3>
+							<p>...help product teams become more aware of and accountable for lifecycle requirements and reviews so that they are easier to prioritize and faster to complete?</p>
+							
+							<h3>How might we...</h3>
+							<p>...enable SF program managers or Pillar focals to more accurately report the status of products to gain Executive leadership support on achieving and maintaining consistent customer outcomes across the entire IBM Cloud portfolio?</p>
+						</div>
+						<div class="research-image">
+							<img src="RMCimg/BrainS.png" alt="Brainstorm Workshop">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Feature Prioritization</h2>
+					</div>
+					<div class="research-layout">
+						<div class="research-text">
+							<h3>Big Bets</h3>
+							<ul>
+								<li><strong>Centralized Progress Dashboard:</strong> Visual dashboard showing each product's onboarding status, shareable with executives and providing clear lifecycle milestone visibility</li>
+								<li><strong>Intelligent Requirements Checklist:</strong> Dynamic checklist that automatically displays relevant requirements based on product type, connected to documentation and GitHub issues</li>
+								<li><strong>Automated Requirement Notifications:</strong> Automatic notifications when new requirements are published, keeping teams informed without relying on Slack or email</li>
+								<li><strong>Approval Transparency:</strong> Clear indicators showing approval status, required approvers, and instructions for obtaining sign-offs</li>
+								<li><strong>Secure Private Repositories:</strong> Restricted GitHub repos accessible only to service teams and designated reviewers, with validated access controls</li>
+							</ul>
+							
+							<h3>No Brainers</h3>
+							<ul>
+								<li><strong>Guided Workflow Wizard:</strong> Automated wizard that determines the correct workflow based on service details, then creates and pushes relevant requirements directly to the team's private repository</li>
+							</ul>
+						</div>
+						<div class="research-image">
+							<img src="RMCimg/FeatureP.png" alt="Feature Prioritization">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>User Journey Map</h2>
+					</div>
+					<div class="journey-content">
+						<h3>Feature gap analysis</h3>
+						<p>As next step, we mapped RMC's functionality against Partner Center to identify what needed to be built and where we could improve. Partner Center already had the third-party seller features covered most basic approval workflows, but critical gaps remained for first-party service onboarding.</p>
+						
+						<p><strong>Missing capabilities:</strong></p>
+						<ul>
+							<li>Maturity level tracking (Experimental/Beta/GA/OneCloud)</li>
+							<li>Evidence submission for approvals</li>
+							<li>Approval history and compliance tracking</li>
+							<li>Conditional approvals with exceptions</li>
+						</ul>
+						
+						<p><strong>Opportunities to Improve:</strong></p>
+						<ul>
+							<li>Automate readiness checks</li>
+							<li>Integrate issue tracking (eliminate GitHub fragmentation)</li>
+							<li>Unify scattered review processes</li>
+						</ul>
+						
+						<!-- PLACEHOLDER: Add user journey map image -->
+						<div class="journey-map-image">
+							<img src="RMCimg/JourneyM.png" alt="User Journey Map">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="c">
+				<div class="chapter">
+					<div class="number">
+						<h1>02</h1>
+					</div>
+					<div class="name">
+						<h2>Design Solution</h2>
+					</div>
+				</div>
+			</section>
+
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Low-Fidelity Designs</h2>
+					</div>
+					<div class="research-layout">
+						<div class="research-text">
+							<p>We started with low-fidelity wireframes to rapidly explore solutions for the core problems identified in research. The wireframes focused on three critical areas: how teams would discover and understand their requirements, how they would track progress across the onboarding journey, and how reviewers would validate completion and provide approvals.</p>
+							
+							<h3>Key Explorations:</h3>
+							<ul>
+								<li><strong>Wizard Flow:</strong> Mapped out question sequences and decision trees to determine the optimal number of steps needed to collect service details without overwhelming users</li>
+								<li><strong>Dashboard Layouts:</strong> Tested ways to display product status, from detailed tables to card-based views, exploring how to balance comprehensive information with at-a-glance clarity</li>
+								<li><strong>Checklist Organization:</strong> Experimented with grouping requirements by phase, priority, or pillar to find the most intuitive structure for teams completing tasks</li>
+								<li><strong>Approval Workflows:</strong> Explored different visual representations of the approval pipeline to make status and next steps immediately clear</li>
+							</ul>
+						</div>
+						<div class="research-image">
+							<img src="RMCimg/LowF.png" alt="Low-Fidelity Wireframes">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>High-Fidelity Designs</h2>
+					</div>
+					<div class="highfi-content">
+						<p>The high-fidelity designs consolidated fragmented workflows into four core components:</p>
+						<ul>
+							<li>Guided wizard that automatically determines relevant requirements</li>
+							<li>Centralized dashboard for progress tracking and product lifecycle updates</li>
+							<li>Checklist connected to documentation</li>
+							<li>Transparent approval workflow</li>
+						</ul>
+						<!-- PLACEHOLDER: Add high-fidelity design overview -->
+						<div class="highfi-image">
+							<img src="RMCimg/HighF.png" alt="High-Fidelity Designs">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Wizard</h2>
+					</div>
+					<div class="research-layout">
+						<div class="research-text">
+							<h3>Design Decisions:</h3>
+							<ul>
+								<li><strong>Automated workflow selection</strong> — Wizard identifies product type and requirements automatically</li>
+								<li><strong>Self-service guidance</strong> — Built-in process knowledge eliminates SME dependency</li>
+								<li><strong>Smart filtering</strong> — Only generates relevant requirements for specific service type</li>
+							</ul>
+							
+							<h3>Impact:</h3>
+							<ul>
+								<li><strong>60% fewer</strong> SME support requests—teams can self-serve</li>
+								<li><strong>Weeks → minutes</strong> for onboarding setup via guided questions</li>
+								<li>Eliminated workflow confusion and requirement errors</li>
+							</ul>
+						</div>
+						<div class="research-image">
+							<img src="RMCimg/Wizard.png" alt="Wizard Flow">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Dashboard</h2>
+					</div>
+					<div class="research-layout">
+						<div class="research-text">
+							<h3>Design Decisions:</h3>
+							<ul>
+								<li><strong>Unified visibility</strong> — Maturity levels, progress, and status in one view</li>
+								<li><strong>Real-time tracking</strong> — Portfolio-wide progress for executive reporting</li>
+								<li><strong>Automated alerts</strong> — Teams notified of new/updated requirements</li>
+							</ul>
+							
+							<h3>Impact:</h3>
+							<ul>
+								<li>Eliminated hours of manual stakeholder reporting</li>
+								<li>Zero missed annual reviews or critical deadlines</li>
+								<li>Increased team ownership—fewer manual follow-ups needed</li>
+							</ul>
+						</div>
+						<div class="research-image">
+							<img src="RMCimg/Dash.png" alt="Dashboard">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Checklist and Approval Flow</h2>
+					</div>
+					<div class="research-layout">
+						<div class="research-text">
+							<h3>Design Decisions:</h3>
+							<ul>
+								<li><strong>Dynamic checklist</strong> — Displays only relevant requirements by product type and phase (Experimental/Beta/GA/OneCloud)</li>
+								<li><strong>GitHub integration</strong> — Auto-pushes to private repos, syncs completion status</li>
+								<li><strong>Centralized evidence</strong> — All proof stored in one accessible location. Private repositories restricted to service teams and designated reviewers with validated permissions</li>
+							</ul>
+							
+							<h3>Impact:</h3>
+							<ul>
+								<li>Instant verification—no more hunting across scattered repos</li>
+								<li>Phase-based progression prevents incomplete submissions</li>
+								<li>Evidence preserved when team members leave IBM</li>
+							</ul>
+						</div>
+						<div class="research-image">
+							<img src="RMCimg/CheckLis.png" alt="Checklist and Approval Flow">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="c">
+				<div class="chapter">
+					<div class="number">
+						<h1>03</h1>
+					</div>
+					<div class="name">
+						<h2>Usability Testing</h2>
+					</div>
+				</div>
+			</section>
+
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Testing Methodology</h2>
+					</div>
+					<div class="testing-content">
+						<p>We validated the redesigned onboarding experience through 1-hour usability sessions with 8 participants: 6 Product Owners and 2 Solution Planners (Technical Leads).</p>
+						
+						<h3>Goals:</h3>
+						<ul>
+							<li>Validate unified platform reduces fragmentation and confusion</li>
+							<li>Assess wizard effectiveness in determining product type and requirements</li>
+							<li>Evaluate dashboard and checklist for progress tracking capabilities</li>
+							<li>Identify usability issues before development investment</li>
+						</ul>
+
+						<h3>Method:</h3>
+						<p>Moderated remote sessions using interactive prototype with task-based scenarios and think-aloud protocol</p>
+						
+						<!-- PLACEHOLDER: Add usability testing photos -->
+						<div class="testing-image">
+							<img src="RMCimg/Testing.png" alt="Usability Testing">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Key Testing Insights</h2>
+					</div>
+					<div class="insights-content">
+						<div class="insights-column">
+							<h3>What Worked Well:</h3>
+							<ul>
+								<li><strong>Intuitive Wizard flow:</strong> All participants completed setup without assistance from SMEs or Service Framework documentation</li>
+								<li><strong>Dashboard & Checklist tracking:</strong> The combination made it significantly easier to accurately track team's progress and locate requirements</li>
+								<li><strong>Extension tracking:</strong> Teams found it useful to see their extensions on the dashboard to remember pending work and stay accountable</li>
+							</ul>
+
+							<h3>Overwhelming Enthusiasm:</h3>
+							<p>Product Owners expressed strong excitement about Partner Center's potential to:</p>
+							<ul>
+								<li>Accelerate releases and reduce time-to-market</li>
+								<li>Make Service Framework process less intimidating</li>
+								<li>Significantly reduce time spent preparing executive reports</li>
+							</ul>
+
+							<h3>Top-Rated Capabilities:</h3>
+							<p><strong>Automated GitHub Integration:</strong> Product Owners loved having requirement issues automatically created in a centralized private repository—eliminating hours of manual setup work</p>
+						</div>
+						
+						<div class="insights-column">
+							<h3>Issues Identified:</h3>
+							<ul>
+								<li><strong>Wizard Maturity Phase information:</strong> Product Owners liked having Experimental/Beta/GA information upfront, but they thought they still needed to select target maturity. Expected to learn about the maturity level after completing the wizard, not during</li>
+								<li><strong>GitHub Navigation confusion:</strong> Product Owners expected to go directly to requirement issues in GitHub from the checklist instead, they landed in SCC (Security and Compliance Center) filtered to a single control</li>
+								<li><strong>Current Phase Visibility:</strong> Users were unable to identify on the Dashboard which phase they were currently working on (Experimental, Beta, GA, or OneCloud)</li>
+								<li><strong>Dashboard Terminology Inconsistency:</strong> Product Owners used the term "workflow" instead of "Shortcuts", and some needed clarity on the difference between "extension" and "exception"</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="c">
+				<div class="chapter">
+					<div class="number">
+						<h1>04</h1>
+					</div>
+					<div class="name">
+						<h2>Design Iterations</h2>
+					</div>
+				</div>
+			</section>
+
+			<section class="row">
+				<div class="wrap">
+					<!-- Iteration 1 -->
+					<div class="iteration">
+						<h3>Iteration 1: Wizard Maturity Phase Information</h3>
+						<div class="iteration-content">
+							<div class="iteration-text-row">
+								<div class="iteration-text-col">
+									<h4>Before</h4>
+									<p>Wizard displayed phase information upfront, confusing Product Owners about whether they needed to select target maturity.</p>
+								</div>
+								<div class="iteration-text-col">
+									<h4>After</h4>
+									<p>Moved phase education to post-wizard, keeping setup focused only on questions requiring user input.</p>
+								</div>
+							</div>
+							<div class="iteration-image-row">
+								<div class="iteration-image">
+									<img src="RMCimg/before1.png" alt="Before - Wizard">
+								</div>
+								<div class="iteration-image">
+									<img src="RMCimg/after1.png" alt="After - Wizard">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Iteration 2 -->
+					<div class="iteration">
+						<h3>Iteration 2: GitHub Navigation</h3>
+						<div class="iteration-content">
+							<div class="iteration-text-row">
+								<div class="iteration-text-col">
+									<h4>Before</h4>
+									<p>Product Owners expected checklist links to open GitHub requirement issues, but instead landed in SCC filtered to a single compliance control.</p>
+									<p class="quote">"Wow, this is not a git issue!" "It is very intimidating to me."</p>
+								</div>
+								<div class="iteration-text-col">
+									<h4>After</h4>
+									<p>Direct links from checklist to GitHub issues</p>
+									<p class="quote">"This will make Service Framework significantly less intimidating" — Product Owner</p>
+								</div>
+							</div>
+							<div class="iteration-image-row">
+								<div class="iteration-image">
+									<img src="RMCimg/before2.png" alt="Before - GitHub Navigation">
+								</div>
+								<div class="iteration-image">
+									<img src="RMCimg/After2.png" alt="After - GitHub Navigation">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Iteration 3 -->
+					<div class="iteration">
+						<h3>Iteration 3: Current Phase Visibility</h3>
+						<div class="iteration-content">
+							<div class="iteration-text-row">
+								<div class="iteration-text-col">
+									<h4>Before</h4>
+									<p>Users were unable to identify on the Dashboard which phase they were currently working on (Experimental, Beta, GA, or OneCloud).</p>
+								</div>
+								<div class="iteration-text-col">
+									<h4>After</h4>
+									<p>Added prominent phase indicator on dashboard highlighting the current phase with visual emphasis.</p>
+									<p class="quote">"Finally a central source of truth instead of bouncing between docs, GitHub, and RMC" — Product Manager</p>
+								</div>
+							</div>
+							<div class="iteration-image-row">
+								<div class="iteration-image">
+									<img src="RMCimg/before3.png" alt="Before - Phase Visibility">
+								</div>
+								<div class="iteration-image">
+									<img src="RMCimg/after3.png" alt="After - Phase Visibility">
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Iteration 4 -->
+					<div class="iteration">
+						<h3>Iteration 4: Dashboard Terminology</h3>
+						<div class="iteration-content">
+							<div class="iteration-text-row">
+								<div class="iteration-text-col">
+									<h4>Before</h4>
+									<p>Product Owners used "workflow" instead of "Shortcuts". Terms "extension" and "exception" were also confused due to similarity.</p>
+									<p class="quote">"I am not sure what is the difference between extension and exception." "Is shortcut what we call workflows today. Why should we change it?"</p>
+								</div>
+								<div class="iteration-text-col">
+									<h4>After</h4>
+									<p>Renamed "Shortcuts" to "Workflows" and added clarifying learn more information descriptions distinguishing extensions from exceptions.</p>
+								</div>
+							</div>
+							<div class="iteration-image-row">
+								<div class="iteration-image">
+									<img src="RMCimg/before4.png" alt="Before - Dashboard Terminology">
+								</div>
+								<div class="iteration-image">
+									<img src="RMCimg/after4.png" alt="After - Dashboard Terminology">
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section class="c">
+				<div class="chapter">
+					<div class="number">
+						<h1>05</h1>
+					</div>
+					<div class="name">
+						<h2>Key Learnings</h2>
+					</div>
+				</div>
+			</section>
+
+			<section class="row final">
+				<div class="wrap-final">
+					<div class="conclusion">
+						<h3>Working Within Constraints</h3>
+						<p>Redesigning an existing system required <strong>deeper strategic thinking</strong> than building new—and produced a more scalable solution by leveraging proven infrastructure.</p>
+
+						<h3>Balance Multiple Stakeholders</h3>
+						<p>Success meant serving Product Owners, reviewers, SMEs, and executives—<strong>finding intersection points</strong> rather than optimizing for one audience.</p>
+
+						<h3>Automate to Reduce Cognitive Load</h3>
+						<p>Embedding intelligence (wizard, notifications) proved <strong>more valuable than interface polish</strong>—great UX often means removing steps entirely.</p>
+
+						<h3>Connect Design to Business Value</h3>
+						<p>User satisfaction mattered, but <strong>$540K savings and 80% faster onboarding</strong> were critical for executive buy-in and proving design ROI.</p>
+					</div>
+				</div>
+			</section>
+
+			<div class="back-top">
+					<a href="#hero"><img src="images2/top.png" alt="Go back top"></a>
+			</div>
+		</main>
+		<footer>
+			<h4>Get in touch</h4>
+			<div class="social">
+				<ul class="icons-social">
+					<li>	<a href="https://www.linkedin.com/in/izabella-timmons-b2116453/"><i class="flaticon-linkedin"></i>
+						</a>
+					</li>
+					<li>	<a href="https://www.behance.net/bellaiza63c4d4"><i class="flaticon-behance"></i>
+						</a>
+					</li>
+					<li>	<a href="https://github.com/Bellaiza631"><i class="flaticon-github"></i>
+						</a>
+					</li>
+					<li>	<a href="https://twitter.com/Izabell23351266"><i class="flaticon-twitter"></i>
+						</a>
+					</li>
+					<li>	<a href="contact.html"><i class="flaticon-mail"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<p>Designed and developed by Izabella Timmons | © Copyright 2019</p>
+		</footer>
+	</div>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	</div> <!-- Close main-content -->
+
+<script>
+// Password protection
+// Password protection with Base64 encoding (for portfolio protection only)
+// Note: Client-side protection is not cryptographically secure
+const correctPassword = atob("TXlwcm9qZWN0czIwMjZJVCE=");
+
+function checkPassword() {
+	const input = document.getElementById('password-input').value;
+	const errorMsg = document.getElementById('error-message');
+	
+	if (input === correctPassword) {
+		// Store in sessionStorage so it persists during the session
+		sessionStorage.setItem('projectAccess', 'granted');
+		showContent();
+	} else {
+		errorMsg.style.display = 'block';
+		document.getElementById('password-input').value = '';
+		document.getElementById('password-input').focus();
+	}
+}
+
+function showContent() {
+	document.getElementById('password-gate').style.display = 'none';
+	document.getElementById('main-content').style.display = 'block';
+}
+
+// Check if already authenticated in this session
+window.onload = function() {
+	if (sessionStorage.getItem('projectAccess') === 'granted') {
+		showContent();
+	}
+	
+	// Allow Enter key to submit
+	document.getElementById('password-input').addEventListener('keypress', function(e) {
+		if (e.key === 'Enter') {
+			checkPassword();
+		}
+	});
+};
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128981519-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+
+gtag('config', 'UA-128981519-1');
+</script>
+
+<script src="js/design.js"></script>
+</body>
+
+</html>
+
+<style>
+/* Impact & Results Cards Styling */
+.impact-cards {
+	display: flex;
+	gap: 30px;
+	margin-top: 40px;
+	flex-wrap: wrap;
+}
+
+.impact-card {
+	flex: 1;
+	min-width: 300px;
+	background: #ffffff;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	padding: 30px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	font-family: 'Montserrat', sans-serif;
+}
+
+.impact-header {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 20px;
+}
+
+.impact-header .checkmark {
+	background: #00C853;
+	color: white;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+	font-weight: bold;
+	flex-shrink: 0;
+}
+
+.impact-header h3 {
+	margin: 0;
+	font-size: 20px;
+	font-weight: 600;
+	color: #333;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.impact-card ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.impact-card ul li {
+	padding-left: 20px;
+	margin-bottom: 15px;
+	position: relative;
+	line-height: 1.6;
+	color: #555;
+}
+
+.impact-card ul li:before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: #00C853;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.impact-card ul li:last-child {
+	margin-bottom: 0;
+}
+
+/* Research Methods Layout */
+.research-layout {
+	display: flex;
+	gap: 40px;
+	margin-top: 30px;
+	align-items: flex-start;
+}
+
+/* Findings sections spacing */
+.findings-section {
+	margin-bottom: 60px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.findings-section:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+/* User Journey Map section */
+.journey-content {
+	margin-top: 30px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.journey-content h3 {
+	font-size: 20px;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.journey-content p {
+	line-height: 1.6;
+	color: #555;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.journey-content p strong {
+	display: block;
+	margin-top: 25px;
+	margin-bottom: 8px;
+	font-weight: 600;
+}
+
+.journey-content ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 25px 0;
+}
+
+.journey-content ul li {
+	padding-left: 20px;
+	margin-bottom: 10px;
+	position: relative;
+	line-height: 1.6;
+	color: #555;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.journey-content ul li:before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: #3638DE;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.journey-map-image {
+	margin-top: 40px;
+	width: 100%;
+}
+
+.journey-map-image img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* High-Fidelity Designs section */
+.highfi-content {
+	margin-top: 30px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.highfi-content p {
+	line-height: 1.6;
+	color: #555;
+	margin-bottom: 20px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.highfi-content ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 40px 0;
+}
+
+.highfi-content ul li {
+	padding-left: 20px;
+	margin-bottom: 10px;
+	position: relative;
+	line-height: 1.6;
+	color: #555;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.highfi-content ul li:before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: #3638DE;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.highfi-image {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.highfi-image img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Testing Methodology section */
+.testing-content {
+	margin-top: 30px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.testing-content p {
+	line-height: 1.6;
+	color: #555;
+	margin-bottom: 20px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.testing-content h3 {
+	font-size: 18px;
+	font-weight: 600;
+	color: #333;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.testing-content ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 25px 0;
+}
+
+.testing-content ul li {
+	padding-left: 20px;
+	margin-bottom: 10px;
+	position: relative;
+	line-height: 1.6;
+	color: #555;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.testing-content ul li:before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: #3638DE;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.testing-image {
+	width: 100%;
+	margin-top: 40px;
+}
+
+.testing-image img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Key Testing Insights section */
+.insights-content {
+	display: flex;
+	gap: 50px;
+	margin-top: 30px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.insights-column {
+	flex: 1;
+}
+
+.insights-column h3 {
+	font-size: 18px;
+	font-weight: 600;
+	color: #333;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.insights-column h3:first-child {
+	margin-top: 0;
+}
+
+.insights-column p {
+	line-height: 1.6;
+	color: #555;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.insights-column ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 25px 0;
+}
+
+.insights-column ul li {
+	padding-left: 20px;
+	margin-bottom: 12px;
+	position: relative;
+	line-height: 1.6;
+	color: #555;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.insights-column ul li:before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: #3638DE;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+/* Design Iterations section */
+.iteration {
+	margin-bottom: 60px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid #e0e0e0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.iteration:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.iteration h3 {
+	font-size: 22px;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 30px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.iteration-content {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.iteration-text-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+}
+
+.iteration-text-col h4 {
+	font-size: 18px;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.iteration-text-col p {
+	line-height: 1.6;
+	color: #555;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.iteration-text-col .quote {
+	font-style: italic;
+	color: #3638DE;
+	padding-left: 20px;
+	border-left: 3px solid #3638DE;
+	margin: 20px 0 15px 0;
+	line-height: 1.6;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.iteration-image-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+	align-items: start;
+}
+
+.iteration-image {
+	width: 100%;
+}
+
+.iteration-image img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.research-text {
+	flex: 1;
+	max-width: 50%;
+}
+
+.research-text h3 {
+	font-size: 18px;
+	font-weight: 600;
+	color: #333;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.research-text h3:first-child {
+	margin-top: 0;
+}
+
+.research-text ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 20px 0;
+}
+
+.research-text ul li {
+	padding-left: 20px;
+	margin-bottom: 10px;
+	position: relative;
+	line-height: 1.6;
+	color: #555;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.research-text ul li:before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: #3638DE;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.research-text p {
+	line-height: 1.6;
+	color: #555;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.research-text p strong {
+	display: block;
+	margin-top: 25px;
+	margin-bottom: 8px;
+	font-weight: 600;
+}
+
+.research-image {
+	flex: 1;
+	max-width: 50%;
+}
+
+.research-image img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Fix for 2-column persona layout */
+.personas .twoteste {
+	width: 50% !important;
+	padding: 0 3% !important;
+	border-bottom: none !important;
+}
+
+.personas .twoteste:first-child {
+	border-right: 1px solid #d8d6dc;
+	padding-right: 4% !important;
+}
+
+.personas .twoteste:last-child {
+	padding-left: 4% !important;
+}
+
+/* Fix spacing between persona sections */
+.personas .avatar-quoteteste {
+	margin-bottom: 64px !important;
+}
+
+.personas .avatar-quoteteste p {
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+.personas .frustration,
+.personas .goal {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	height: auto !important;
+}
+
+.personas .frustration {
+	height: auto !important;
+	margin-top: 0 !important;
+}
+
+.personas .bold-persona {
+	padding-top: 0 !important;
+	margin-top: 0 !important;
+	margin-bottom: 8px !important;
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+.personas .bold-persona-ol {
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+.personas .persona-body {
+	margin-top: 0 !important;
+	margin-bottom: 20px !important;
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+.personas .persona-body li {
+	padding-bottom: 8px !important;
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+.personas .twoteste p {
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Global hierarchy improvements */
+strong {
+	font-weight: 600;
+	color: #333;
+}
+
+/* Make metrics stand out more */
+.impact-card ul li strong,
+.research-text ul li strong,
+.iteration-side p strong {
+	font-weight: 700;
+	color: #1a1a1a;
+}
+
+/* Before/After Comparison section */
+.before-after-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+	margin-top: 40px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.before-after-item {
+	background: #f9f9f9;
+	border-radius: 8px;
+	padding: 30px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.label-tag {
+	display: inline-block;
+	padding: 6px 14px;
+	border-radius: 4px;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.label-tag.legacy {
+	background: #FFE5E5;
+	color: #CC0000;
+}
+
+.label-tag.before {
+	background: #FFF3E0;
+	color: #F57C00;
+}
+
+.before-after-item h3 {
+	font-size: 20px;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 20px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.comparison-image {
+	margin-bottom: 25px;
+	border-radius: 6px;
+	overflow: hidden;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-image img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.comparison-details h4 {
+	font-size: 16px;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 12px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.comparison-details ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.comparison-details ul li {
+	padding-left: 20px;
+	margin-bottom: 10px;
+	position: relative;
+	line-height: 1.6;
+	color: #555;
+	font-size: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.comparison-details ul li:before {
+	content: "×";
+	position: absolute;
+	left: 0;
+	color: #dc3545;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+/* Key Learnings section */
+.conclusion {
+	max-width: 900px;
+	margin: 0 auto;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.conclusion h3 {
+	font-size: 20px;
+	font-weight: 600;
+	color: #333;
+	margin-top: 40px;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.conclusion h3:first-child {
+	margin-top: 0;
+}
+
+.conclusion p {
+	line-height: 1.6;
+	color: #555;
+	margin-bottom: 25px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+}
+
+.conclusion p strong {
+	font-weight: 700;
+	color: #1a1a1a;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+	.impact-cards {
+		flex-direction: column;
+		gap: 20px;
+	}
+	
+	.impact-card {
+		min-width: 100%;
+		padding: 20px;
+	}
+	
+	.impact-header h3 {
+		font-size: 18px;
+	}
+	
+	.impact-card ul li {
+		font-size: 14px;
+		margin-bottom: 12px;
+	}
+	
+	/* Make images responsive */
+	.research-image img,
+	.persona-images img,
+	.finding-image img,
+	.workshop-image img,
+	.lowfi-image img,
+	.highfi-image img,
+	.wizard-image img,
+	.dashboard-image img,
+	.checklist-image img,
+	.testing-image img,
+	.iteration-image img {
+		width: 100%;
+		height: auto;
+		max-width: 100%;
+	}
+	
+	/* Research layout mobile */
+	.research-layout {
+		flex-direction: column;
+	}
+	
+	/* Insights layout mobile */
+	.insights-content {
+		flex-direction: column;
+		gap: 20px;
+	}
+	
+	/* Iterations layout mobile */
+	.iteration-text-row,
+	.iteration-image-row {
+		grid-template-columns: 1fr;
+		gap: 30px;
+	}
+	
+	/* Before/After comparison mobile */
+	.before-after-grid {
+		grid-template-columns: 1fr;
+		gap: 30px;
+	}
+	
+	.before-after-item {
+		padding: 20px;
+	}
+	
+	.iteration {
+		margin-bottom: 40px;
+		padding-bottom: 30px;
+	}
+	
+	.research-text {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	
+	.research-image {
+		width: 100%;
+	}
+	
+	/* Personas mobile */
+	.personas .twoteste {
+		width: 100% !important;
+		border-right: none !important;
+		border-bottom: 2px solid #d8d6dc;
+		padding: 0 0 5% 0 !important;
+		margin-bottom: 5%;
+	}
+	
+	.personas .twoteste:last-child {
+		border-bottom: none;
+		padding-left: 0 !important;
+	}
+	
+	/* Adjust row layouts for mobile */
+	.row {
+		flex-direction: column;
+	}
+	
+	.col-md-6,
+	.col-md-4 {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	
+	/* Iteration sections */
+	.iteration .row {
+		flex-direction: column;
+	}
+	
+	.iteration .col-md-6 {
+		width: 100%;
+	}
+	
+	.iteration-image {
+		margin-bottom: 20px;
+	}
+}
+
+@media (max-width: 480px) {
+	.impact-card {
+		padding: 15px;
+	}
+	
+	.impact-header h3 {
+		font-size: 16px;
+	}
+	
+	.impact-card ul li {
+		font-size: 13px;
+		padding-left: 18px;
+	}
+	
+	.impact-header .checkmark {
+		width: 24px;
+		height: 24px;
+		font-size: 14px;
+	}
+}
+</style>
