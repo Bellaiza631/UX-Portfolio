@@ -1,0 +1,1856 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<title>Deployable Architecture Experience | Izabella Timmons</title>
+	<link rel="shortcut icon" type="image/png" href="images/logo.png">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Cardo:400,400i,700" rel="stylesheet">
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="icons/flaticon.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+	<!-- Password Protection Overlay -->
+	<div id="password-gate" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: #b7a0eb; z-index: 10000; display: flex; align-items: center; justify-content: center;">
+		<div style="background: white; padding: 40px 50px; border-radius: 12px; max-width: 400px; width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+			<h2 style="font-family: 'Montserrat', sans-serif; font-size: 24px; font-weight: 600; color: #333; margin-bottom: 5px; text-align: center;">🔒 Protected Work</h2>
+			<p style="font-family: 'Montserrat', sans-serif; font-size: 13px; color: #999; margin-bottom: 20px; text-align: center; font-weight: 500;">IBM NDA Required</p>
+			<p style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #666; margin-bottom: 25px; text-align: center; line-height: 1.5;">This case study contains confidential work. Password provided to hiring managers in application materials.</p>
+			<input type="password" id="password-input" placeholder="Enter password" style="width: 100%; padding: 12px 15px; font-family: 'Montserrat', sans-serif; font-size: 16px; border: 2px solid #ddd; border-radius: 6px; margin-bottom: 15px; box-sizing: border-box;" />
+			<button onclick="checkPassword()" style="width: 100%; padding: 12px; background: #3638DE; color: white; border: none; border-radius: 6px; font-family: 'Montserrat', sans-serif; font-size: 16px; font-weight: 600; cursor: pointer; transition: background 0.3s;">Submit</button>
+			<p id="error-message" style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #dc3545; margin-top: 15px; text-align: center; display: none;">Incorrect password. Please try again.</p>
+			<a href="index.html" style="display: block; text-align: center; margin-top: 20px; font-family: 'Montserrat', sans-serif; font-size: 14px; color: #3638DE; text-decoration: none;">← Back to Portfolio</a>
+		</div>
+	</div>
+
+	<div class="container" id="main-content" style="display: none;">
+		<header id="hero" class="header-cs">
+			<div class="top-menu">
+				<a href="index.html">
+					<img src="images/logo.svg" alt="logo" class="logo">
+				</a>
+				<nav class="site-nav site-nav-cs">
+					<ul>
+						<li><a href="home.html">Home</a></li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="index.html#section-projects">Work</a></li>
+						<li><a href="https://izabellatimmons.com/IzabellaTimmonsResume-port.pdf" target="_blank">Resume</a></li>
+						<li><a href="contact.html">Contact me</a></li>
+					</ul>
+				</nav>
+				<div class="menu-toggle">
+					<div class="hamburger-cs"></div>
+				</div>
+			</div>
+			<div class="intro-project">
+				<div class="imageoceanleaf">
+					<img src="images2/DeployableArch.png" alt="Deployable Architecture">
+				</div>
+				<div class="intro-cs">
+					<div class="logo-oceanleaf">
+						<img src="images2/IBM_Logo1.png" alt="IBM Logo">
+					</div>
+					<p>IBM Cloud's Deployable Architectures are pre-configured, automated infrastructure solutions designed to accelerate enterprise cloud deployment. 
+They function as ready-to-use blueprints that package infrastructure code, configuration, and automation—enabling users to deploy entire environments following IBM's best practices for security, compliance, and reliability.</p>
+				</div>
+			</div>
+		</header>
+		<main>
+			<!-- Problem/Solution Section - EXACT RMC STYLE -->
+			<section class="row">
+				<div class="wrap-padding problem-solution col-md-6">
+					<h2>Problem</h2>
+					<p>IBM Cloud's Deployable Architectures were designed to simplify complex infrastructure deployments, but users couldn't find them, understand their value, or successfully configure them—resulting in a <strong>98.59% abandonment rate</strong>.</p>
+					<p>Technical users and IBM partners struggled at every phase: unclear terminology prevented discovery, overwhelming product pages blocked evaluation, and confusing configuration destroyed confidence.</p>
+				</div>
+				<div class="wrap-padding problem-solution col-md-6n">
+					<h2>Solution</h2>
+					<p>Redesigned the end-to-end Deployable Architecture experience with dedicated catalog navigation, interactive architecture diagrams, transparent pricing, and guided configuration flows.</p>
+					<p>Created visual feedback systems and progressive disclosure patterns that reduced cognitive load while building user confidence. Achieved <strong>63% growth</strong> in deployments and <strong>81.25/100</strong> satisfaction score.</p>
+				</div>
+			</section>
+			
+			<!-- NDA Disclaimer -->
+			<section class="row">
+				<div class="wrap">
+					<div class="nda-notice" style="background: #FFF9E6; border-left: 4px solid #F57C00; padding: 20px 25px; border-radius: 6px; margin: 20px 0;">
+						<p style="font-family: 'Montserrat', sans-serif; font-size: 14px; color: #666; line-height: 1.6; margin: 0;"><strong style="color: #F57C00;">⚠️ Confidentiality Notice:</strong> This case study has been modified to protect proprietary information. Specific metrics have been approximated and sensitive screenshots redacted in accordance with IBM NDA requirements.</p>
+					</div>
+				</div>
+			</section>
+			
+			<!-- Role, Duration, Tools - EXACT RMC STYLE -->
+			<section class="row role-del-tools">
+				<div class="roles col-md-4">
+					<h2>My Role</h2>
+					<ul>
+						<li>Lead Product Designer</li>
+					</ul>
+				</div>
+				<div class="deliverables col-md-4">
+					<h2>Duration & Team</h2>
+					<ul>
+						<li>1 year</li>
+						<li>Product Manager</li>
+						<li>Researcher</li>
+						<li>Developers</li>
+						<li>Architect</li>
+					</ul>
+				</div>
+				<div class="tools col-md-4">
+					<h2>Tools</h2>
+					<ul>
+						<li>Figma</li>
+						<li>Mural</li>
+						<li>Slack</li>
+					</ul>
+				</div>
+			</section>
+
+			<!-- My Role Description - EXACT RMC STYLE -->
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>My role</h2>
+					</div>
+					<p style="font-family: 'Montserrat', sans-serif; line-height: 1.8; color: #555; margin-bottom: 20px;">As <strong>UX Design Lead</strong>, I synthesized findings from design reviews and user testing sessions, organizing insights by deployment phase to identify patterns and pain points across the user journey. I evaluated each issue's criticality, prioritized solutions based on user impact and business value, and collaborated with stakeholders and product managers to align on the redesign strategy.</p>
+					<p style="font-family: 'Montserrat', sans-serif; line-height: 1.8; color: #555;">I then owned the end-to-end design execution, leading the solution through multiple review cycles and validation testing to address systemic usability and information architecture issues.</p>
+				</div>
+			</section>
+
+			<!-- Impact & Results - EXACT RMC STYLE -->
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Impact & Results</h2>
+					</div>
+					<div class="impact-cards">
+						<div class="impact-card">
+							<div class="impact-header">
+								<span class="checkmark">✓</span>
+								<h3>Deployment Growth</h3>
+							</div>
+							<ul>
+								<li><strong>63% growth</strong> in DA deployments (2.46k → 4k events)</li>
+								<li>Reduced drop-off from <strong>98.59%</strong> to acceptable levels</li>
+							</ul>
+						</div>
+						<div class="impact-card">
+							<div class="impact-header">
+								<span class="checkmark">✓</span>
+								<h3>User Confidence</h3>
+							</div>
+							<ul>
+								<li><strong>81.25/100</strong> satisfaction score</li>
+								<li><strong>91.25%</strong> usability rating (highly usable and useful)</li>
+								<li><strong>6.25/7</strong> confidence score</li>
+							</ul>
+						</div>
+						<div class="impact-card">
+							<div class="impact-header">
+								<span class="checkmark">✓</span>
+								<h3>Partner Ecosystem</h3>
+							</div>
+							<ul>
+								<li>Increased external partner workflows to <strong>49%</strong></li>
+								<li>Improved ability to add DAs to customer projects</li>
+								<li>Validated configurations successfully</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Chapter 01: Research & Discovery -->
+			<section class="c">
+				<div class="chapter">
+					<div class="number">
+						<h1>01</h1>
+					</div>
+					<div class="name">
+						<h2>Research & Discovery</h2>
+					</div>
+				</div>
+			</section>
+
+			<!-- Research Process - TEXT LEFT, IMAGE RIGHT -->
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Research Process</h2>
+					</div>
+					<div class="research-layout">
+						<div class="research-text">
+							<h3>Methods</h3>
+							<ul>
+								<li>User interviews with 10 participants (engineers, developers, architects)</li>
+								<li>Design reviews with 8 designers</li>
+								<li>6 usability testing sessions</li>
+							</ul>
+							
+							<h3>Participants</h3>
+							<ul>
+								<li>Tech Sellers (demos and quotes for clients)</li>
+								<li>Solution Architects (evaluate technical requirements)</li>
+								<li>Cloud Engineers (configure and deploy)</li>
+								<li>Application Developers (consume infrastructure)</li>
+							</ul>
+							
+							<h3>Goal</h3>
+							<p>Identify critical pain points and drop-off moments throughout the Deployable Architecture user journey to enable strategic prioritization of solutions with the highest impact on user success.</p>
+						</div>
+						<div class="research-image">
+							<img src="DAimg/DAresearch.png"Research Process">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Personas - EXACT RMC STYLE (side by side, 2 rows) -->
+			<section class="row personas">
+				<div class="wrap">
+					<div class="title">
+						<h2>Personas</h2>
+					</div>
+					<div class="flows-description">
+						<p>Based on research with 10 participants, I created four personas representing our primary users across the deployment journey.</p>
+					</div>
+					<div class="teste row">
+						<!-- Persona 1 -->
+						<div class="twoteste">
+							<div class="padding">
+								<div class="avatar-teste">
+									<img src="DAimg/Alex.png" alt="Alex T">
+									<p class="bold-persona-ol">Alex T</p>
+									<p>Tech Seller</p>
+								</div>
+								<div class="avatar-quoteteste">
+									<p>"I can't confidently walk a client through this deployment process. If I'm confused by the workflow, how can I expect them to trust it?"</p>
+								</div>
+								<div class="frustration">
+									<p class="bold-persona">Role</p>
+									<ul class="persona-body">
+										<li>Deploys IBM Cloud solutions for enterprise clients</li>
+										<li>Bridges technical and business requirements</li>
+										<li>Needs to demo, quote, and deploy DAs for customers</li>
+									</ul>
+								</div>
+								<div class="goal">
+									<p class="bold-persona">Goals</p>
+									<ul class="persona-body">
+										<li>Quickly configure DAs for client presentations</li>
+										<li>Generate accurate quotes and timelines</li>
+										<li>Deploy solutions confidently for paying customers</li>
+									</ul>
+								</div>
+								<div class="goal">
+									<p class="bold-persona">Frustrations</p>
+									<ul class="persona-body">
+										<li>Complex workflow made client demos difficult</li>
+										<li>Couldn't confidently walk customers through deployment</li>
+										<li>Lost deals due to perceived complexity</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- Persona 2 -->
+						<div class="twoteste">
+							<div class="padding">
+								<div class="avatar-teste">
+									<img src="DAimg/Josh.png" alt="Josh R">
+									<p class="bold-persona-ol">Josh R</p>
+									<p>Solution Architect</p>
+								</div>
+								<div class="avatar-quoteteste">
+									<p>"The name 'Deployable Architecture' is too abstract. I need to know what it actually does before I can decide if it's relevant to my work."</p>
+								</div>
+								<div class="frustration">
+									<p class="bold-persona">Role</p>
+									<ul class="persona-body">
+										<li>Discovers, evaluates and recommends infrastructure patterns</li>
+										<li>Balances technical requirements with business constraints</li>
+										<li>Needs to understand architecture deeply before committing</li>
+									</ul>
+								</div>
+								<div class="goal">
+									<p class="bold-persona">Goals</p>
+									<ul class="persona-body">
+										<li>Quickly evaluate if a DA meets technical requirements</li>
+										<li>Understand architecture components and how they connect</li>
+										<li>Validate security and compliance features</li>
+									</ul>
+								</div>
+								<div class="goal">
+									<p class="bold-persona">Frustrations</p>
+									<ul class="persona-body">
+										<li>No quick way to understand DA architecture at a glance</li>
+										<li>Had to dig through multiple pages to find technical details</li>
+										<li>Couldn't confidently recommend DAs without extensive research</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Row 2 -->
+					<div class="teste row">
+						<!-- Persona 3 -->
+						<div class="twoteste">
+							<div class="padding">
+								<div class="avatar-teste">
+									<img src="DAimg/Maya.png" alt="Maya C">
+									<p class="bold-persona-ol">Maya C</p>
+									<p>Senior Cloud Engineer</p>
+								</div>
+								<div class="avatar-quoteteste">
+									<p>"There's too much information in this architecture overview. I can't tell what's actually included versus what's optional or separate."</p>
+								</div>
+								<div class="frustration">
+									<p class="bold-persona">Role</p>
+									<ul class="persona-body">
+										<li>Responsible for deploying and maintaining production environments</li>
+										<li>Works with tight deadlines and strict compliance requirements</li>
+										<li>Familiar with Terraform and infrastructure-as-code</li>
+									</ul>
+								</div>
+								<div class="goal">
+									<p class="bold-persona">Goals</p>
+									<ul class="persona-body">
+										<li>Deploy secure, compliant infrastructure quickly and correctly</li>
+										<li>Reduce manual configuration errors</li>
+										<li>Ensure deployments meet Financial Services Cloud standards</li>
+									</ul>
+								</div>
+								<div class="goal">
+									<p class="bold-persona">Frustrations</p>
+									<ul class="persona-body">
+										<li>Couldn't find DAs in the catalog—unclear navigation</li>
+										<li>Configuration options were overwhelming and unclear</li>
+										<li>Validation process felt like a black box</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<!-- Persona 4 -->
+						<div class="twoteste">
+							<div class="padding">
+								<div class="avatar-teste">
+									<img src="DAimg/Peter.png" alt="Peter K">
+									<p class="bold-persona-ol">Peter K</p>
+									<p>Application Developer</p>
+								</div>
+								<div class="avatar-quoteteste">
+									<p>"I'm honestly afraid I'll configure something wrong and break the deployment. I wish it would just tell me what settings make sense for a basic app environment."</p>
+								</div>
+								<div class="frustration">
+									<p class="bold-persona">Role</p>
+									<ul class="persona-body">
+										<li>Needs infrastructure set up so he can deploy applications</li>
+										<li>Prefers not to deal with low-level infrastructure details</li>
+										<li>Works in fast-paced environment with tight deadlines</li>
+									</ul>
+								</div>
+								<div class="goal">
+									<p class="bold-persona">Goals</p>
+									<ul class="persona-body">
+										<li>Get a working cloud environment deployed quickly</li>
+										<li>Minimal time spent on infrastructure configuration</li>
+										<li>Deploy with confidence even without deep cloud expertise</li>
+									</ul>
+								</div>
+								<div class="goal">
+									<p class="bold-persona">Frustrations</p>
+									<ul class="persona-body">
+										<li>Felt overwhelmed by infrastructure terminology and options</li>
+										<li>Configuration felt too technical and intimidating</li>
+										<li>Afraid of making mistakes that would cause deployment failures</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Envisioned User Journey -->
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Envisioned User Journey</h2>
+					</div>
+					<div class="journey-flow">
+						<div class="journey-step">
+							<div class="journey-avatar">
+								<img src="DAimg/Alex.png" alt="Alex T">
+							</div>
+							<h4>Alex T - Tech Seller</h4>
+							<p>Discovers the DA in catalog, evaluates it for client needs, and adds it to a project to share with the technical team.</p>
+							<p class="journey-arrow">→ Hands off to Solution Architect</p>
+						</div>
+						<div class="journey-step">
+							<div class="journey-avatar">
+								<img src="DAimg/Josh.png" alt="Josh R">
+							</div>
+							<h4>Josh R - Solution Architect</h4>
+							<p>Reviews the architecture diagram and documentation to confirm it meets security, compliance, and technical requirements.</p>
+							<p class="journey-arrow">→ Hands off to Cloud Engineer</p>
+						</div>
+						<div class="journey-step">
+							<div class="journey-avatar">
+								<img src="DAimg/Maya.png" alt="Maya C">
+							</div>
+							<h4>Maya C - Senior Cloud Engineer</h4>
+							<p>Configures the DA with specific parameters (region, resources, sizing), validates the setup, and executes the deployment.</p>
+							<p class="journey-arrow">→ Hands off to Developer</p>
+						</div>
+						<div class="journey-step">
+							<div class="journey-avatar">
+								<img src="DAimg/Peter.png" alt="Peter K">
+							</div>
+							<h4>Peter K - Application Developer</h4>
+							<p>Receives the deployed cloud environment and begins building and deploying applications without needing to manage infrastructure.</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Key Research Findings - TEXT LEFT, IMAGE RIGHT (3 findings) -->
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Key Research Findings</h2>
+					</div>
+					
+					<!-- Finding 1 -->
+					<div class="research-layout findings-section">
+						<div class="research-text">
+							<h3>Finding 1: Users couldn't find Deployable Architectures</h3>
+							<p>"What is a Deployable Architecture? As a user, it doesn't directly speak to me." — Cloud Engineer participant</p>
+							
+							<p><strong>Key Issues:</strong></p>
+							<ul>
+								<li><strong>Unclear terminology</strong> — The term "Deployable Architecture" felt abstract and didn't align with how users searched</li>
+								<li><strong>No visual differentiation</strong> — Users couldn't distinguish DAs from regular IBM Cloud services</li>
+								<li><strong>Broken navigation and search</strong> — No efficient filtering, search didn't surface DAs appropriately</li>
+							</ul>
+							
+							<p><strong>Impact:</strong> Significant drop-off between catalog visits and DA engagement validated that information architecture was preventing users from finding solutions.</p>
+						</div>
+						<div class="research-image">
+							<img src="DAimg/Discover.png" alt="Discoverability Issues">
+						</div>
+					</div>
+					
+					<!-- Finding 2 -->
+					<div class="research-layout findings-section">
+						<div class="research-text">
+							<h3>Finding 2: Users couldn't confidently evaluate or understand DAs</h3>
+							<p>"There's too much information in this architecture overview. I can't tell what's actually included versus what's optional." — Cloud Engineer</p>
+							
+							<p><strong>Key Issues:</strong></p>
+							<ul>
+								<li><strong>Unclear pricing and cost visibility</strong> — Users couldn't determine pricing variations or estimate total costs</li>
+								<li><strong>Hidden critical functionality</strong> — Important features were buried or difficult to discover</li>
+								<li><strong>Overwhelming information architecture</strong> — Dense content made it difficult to extract key details</li>
+							</ul>
+							
+							<p><strong>Impact:</strong> Even motivated users couldn't confidently determine if a solution fit their needs, leading to decision paralysis.</p>
+						</div>
+						<div class="research-image">
+							<img src="DAimg/ProductPage.png" alt="Evaluation Problems">
+						</div>
+					</div>
+					
+					<!-- Finding 3 -->
+					<div class="research-layout findings-section">
+						<div class="research-text">
+							<h3>Finding 3: Users couldn't complete deployments confidently</h3>
+							<p>"I'm afraid I'll configure something wrong and break the deployment." — Application Developer</p>
+							
+							<p><strong>Key Issues:</strong></p>
+							<ul>
+								<li><strong>Missing contextual information</strong> — Users didn't understand why they needed to create a project</li>
+								<li><strong>Configure: Overwhelming information</strong> — Too many choices without clear indication of required vs. optional</li>
+								<li><strong>Broken validation experience</strong> — Unclear error messages, unpredictable timing, missing progress indicators</li>
+							</ul>
+							
+							<p><strong>Impact:</strong> Only <strong>1.41%</strong> successfully completed deployments due to compounding friction points.</p>
+						</div>
+						<div class="research-image">
+							<img src="DAimg/ConfigDeploy.png" alt="Configuration Failures">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- The Problem Section - TEXT LEFT, IMAGE RIGHT -->
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>The Problem</h2>
+					</div>
+					<div class="research-layout">
+						<div class="research-text">
+							<h3>Powerful Solution, Invisible to Users</h3>
+							<p>IBM Cloud's Deployable Architectures were designed to simplify complex infrastructure deployments into templated solutions. However, users couldn't find DAs in the catalog, understand their value proposition, or successfully configure them.</p>
+							
+							<h3>Broken User Journey Across Multiple Touchpoints</h3>
+							<p>Technical users and IBM partners struggled at every phase: unclear terminology and poor search prevented discovery, overwhelming product pages blocked evaluation, and confusing configuration with unhelpful validation errors destroyed confidence.</p>
+							
+							<p><strong>Challenge:</strong> Redesign the end-to-end Deployable Architecture experience—from catalog discovery through configuration and deployment—to create a unified, intuitive workflow that enables users to confidently find, evaluate, and deploy infrastructure solutions independently.</p>
+						</div>
+						<div class="research-image">
+							<img src="DAimg/Problem.png" alt="The Problem Visualization">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- User Needs - 3 COLUMNS -->
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>User Needs</h2>
+					</div>					
+					<div class="needs-grid">
+						<div class="need-column">
+							<h3>Discover and Evaluate Solutions</h3>
+							<p>Users need to find Deployable Architectures when searching for infrastructure solutions</p>
+							<ul>
+								<li>Clear categorization by use case, industry, and compliance</li>
+								<li>Use case-based naming aligned with user search behavior</li>
+								<li>Effective filtering to narrow catalog options</li>
+								<li>Visual differentiation from standard products</li>
+							</ul>
+						</div>
+						<div class="need-column">
+							<h3>Product Page Evaluation</h3>
+							<p>Users need to quickly assess whether a DA meets their technical, security, and business requirements</p>
+							<ul>
+								<li>Visual architecture diagram above the fold</li>
+								<li>Components grouped by functionality</li>
+								<li>"Best for" use case descriptions</li>
+								<li>Transparent starting cost estimates</li>
+								<li>Upfront Quickstart pricing</li>
+							</ul>
+						</div>
+						<div class="need-column">
+							<h3>Configuration & Deployment</h3>
+							<p>Users need to configure and deploy infrastructure independently with confidence</p>
+							<ul>
+								<li>Define requirements with visual clarity</li>
+								<li>Modify and configure intuitively</li>
+								<li>Validate and deploy with confidence</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Chapter 02: Design Solution -->
+			<section class="c">
+				<div class="chapter">
+					<div class="number">
+						<h1>02</h1>
+					</div>
+					<div class="name">
+						<h2>Design Solution</h2>
+					</div>
+				</div>
+			</section>
+
+			<!-- Solution 1: Discoverability - TEXT LEFT, IMAGE RIGHT -->
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Solution 1: DA Discoverability</h2>
+					</div>
+					<div class="research-layout">
+						<div class="research-text">
+							<p>Redesigned the catalog experience to make Deployable Architectures easy to discover, understand, and evaluate at a glance.</p>
+							
+							<h3>Key Features:</h3>
+							<ul>
+								<li><strong>Organized catalog with dedicated product type navigation</strong> — Introduced distinct tabs for Software, Services, and Deployable Architectures</li>
+								<li><strong>Educational banner with clear value proposition</strong> — Added prominent banner explaining what DAs are and their benefits</li>
+								<li><strong>Enhanced search to surface all available DAs</strong> — Improved search algorithms to include results across all catalogs</li>
+								<li><strong>AI-powered assistance for exploration</strong> — Integrated AI chat prompt directly in the catalog</li>
+								<li><strong>Industry-specific filtering</strong> — Added industry filters for targeted discovery</li>
+							</ul>
+						</div>
+						<div class="research-image">
+							<img src="DAimg/Discovernew.png" alt="Discoverability Solution">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Solution 2: Product Page - TEXT LEFT, IMAGE RIGHT -->
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Solution 2: Product Page Redesign</h2>
+					</div>
+					<div class="research-layout">
+						<div class="research-text">
+							<p>Redesigned the product page to provide instant visual understanding of architecture, transparent pricing, and clear differentiation between tiers.</p>
+							
+							<h3>Key Features:</h3>
+							<ul>
+								<li><strong>Interactive architecture diagram above the fold</strong> — Dynamic diagrams show all components at page top. Users click for details and switch tiers to see real-time visual updates</li>
+								<li><strong>Dynamic resource and pricing visibility by tier</strong> — Summary panel displays all resources with individual pricing. Switching tiers automatically updates costs and components</li>
+								<li><strong>Clear tier differentiation with "Best for" labels</strong> — Added contextual labels ("Best for: POC," "Production ready," "Most secure")</li>
+								<li><strong>Comparison table for evaluation</strong> — Side-by-side comparison shows what's included in each tier</li>
+								<li><strong>Guided architecture customization</strong> — Interactive customization flow where users select a base tier and add/remove optional components. Pricing updates in real-time and modified components highlight on the diagram</li>
+							</ul>
+						</div>
+						<div class="research-image">
+							<img src="DAimg/Productpage new.png" alt="Product Page Solution">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Solution 3: Deployment - TEXT LEFT, IMAGE RIGHT (Part 1) -->
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Solution 3: Deployment Experience</h2>
+					</div>
+					<div class="research-layout">
+						<div class="research-text">
+							<p>Simplified the deployment workflow with contextual guidance, progressive disclosure, and transparent validation feedback.</p>
+							
+							<h3>Key Features:</h3>
+							<ul>
+								<li><strong>Contextual project creation guidance</strong> — Added modal explaining what projects are and why they're needed for DA deployment</li>
+								<li><strong>Simplified configuration with progressive disclosure</strong> — Reduced cognitive load by presenting only essential configuration fields by default. Users can access advanced mode for additional options. Inputs are logically grouped and ordered, while the architecture diagram updates dynamically during configuration</li>
+							</ul>
+						</div>
+						<div class="research-image">
+							<img src="DAimg/deploymentnew.png" alt="Deployment Solution">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Solution 3: Deployment - Continued (Part 2) -->
+			<section class="row">
+				<div class="wrap">
+					<div class="research-layout">
+						<div class="research-text">
+							<h3>Key Features (continued):</h3>
+							<ul>
+								<li><strong>Transparent validation with real-time feedback</strong> — Redesigned validation to show dynamic progress and clear status messages. Users now see exactly what's being validated and receive actionable feedback if issues arise</li>
+								<li><strong>Clear post-deployment guidance</strong> — Added structured next steps after successful deployment, guiding users on how to access their infrastructure and begin using their deployed environment</li>
+							</ul>
+						</div>
+						<div class="research-image">
+							<img src="DAimg/deployment2.png" alt="Deployment Validation">
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Chapter 03: Validation & Results -->
+			<section class="c">
+				<div class="chapter">
+					<div class="number">
+						<h1>03</h1>
+					</div>
+					<div class="name">
+						<h2>Validation & Results</h2>
+					</div>
+				</div>
+			</section>
+
+			<!-- Testing Results -->
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Testing Results</h2>
+					</div>
+					<div style="font-family: 'Montserrat', sans-serif; font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 30px;">
+						<p style="margin-bottom: 20px;">I conducted usability testing with <strong>8 participants</strong> (engineers, developers, and architects) to validate the redesigned experience across discovery, evaluation, and configuration.</p>
+						<p style="margin-bottom: 30px;"><strong>Results:</strong> The redesigned experience achieved an <strong>81.25/100 satisfaction score</strong> and <strong>91.25% usability rating</strong>, with users successfully navigating from discovery through deployment without blocking issues.</p>
+					</div>
+					
+					<div class="validation-columns">
+						<div class="validation-col">
+							<h3>What WOWed the Users</h3>
+							<ul>
+								<li><strong>Visual architecture diagram above the fold</strong> — Architects loved discovering the architecture diagrams. It instantly communicates what is in a Deployable Architecture and helps them decide faster than reading an explanation</li>
+								<li><strong>Automated resource provisioning</strong> — Architects loved Quickstarts because it would give them a fast, automated, and recommended way to start setting up their proof of concept or sandbox</li>
+								<li><strong>Dynamic architecture diagram updates</strong> — Architects were very enthusiastic about editing configurations and seeing it update the diagram. They found it straining to map the inputs in a separate list to the architecture</li>
+							</ul>
+						</div>
+						<div class="validation-col">
+							<h3>What Could Be Better</h3>
+							<ul>
+								<li><strong>Exportable and editable diagrams</strong> — Architects expected the ability to download diagrams as a PDF or editable format to edit it and include it in their documents or presentations to stakeholders or clients</li>
+								<li><strong>Knowing what can be modified or configured</strong> — From the product page, Architects wanted to know what they would be able to modify or configure about a solution (e.g., CPU and memory, logging and monitoring)</li>
+								<li><strong>Learning about components and products within</strong> — As they drill into an architecture and its components, Architects wanted to learn more about the products it will use, especially if they are new to IBM Cloud</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Key Learnings -->
+			<section class="row">
+				<div class="wrap">
+					<div class="title">
+						<h2>Key Learnings</h2>
+					</div>
+					
+					<div class="learning-section">
+						<h3>Visual feedback builds confidence in complex products</h3>
+						<p>Real-time diagram updates and dynamic pricing weren't just nice-to-have features—they were critical to building user confidence. Users needed to see what they were building and understand cost implications immediately, not after deployment. This reinforced that for technical products, <strong>showing is more powerful than telling</strong>.</p>
+					</div>
+					
+					<div class="learning-section">
+						<h3>Progressive disclosure scales across skill levels</h3>
+						<p>By presenting essential fields first with advanced options available on demand, we successfully served both novice developers and expert architects without compromising either experience. This approach can be applied across IBM Cloud's product portfolio to reduce cognitive load while maintaining power-user functionality.</p>
+					</div>
+					
+					<div class="learning-section">
+						<h3>Discovery problems cascade into adoption failures</h3>
+						<p>Even the most well-designed configuration experience fails if users can't find the product. Fixing catalog navigation and search had equal impact to improving the deployment workflow itself. This taught me to <strong>always validate the entire user journey</strong>—not just the core feature—when redesigning enterprise products.</p>
+					</div>
+					
+					<div class="learning-section">
+						<h3>Early stakeholder alignment accelerates execution</h3>
+						<p>Synthesizing research findings by deployment phase and prioritizing issues by impact enabled productive alignment with product managers and engineering early. This shared understanding of priorities reduced design iteration cycles and ensured the team focused on high-impact solutions first.</p>
+					</div>
+				</div>
+			</section>
+
+			<div class="back-top">
+					<a href="#hero"><img src="images2/top.png" alt="Go back top"></a>
+			</div>
+		</main>
+		<footer>
+			<h4>Get in touch</h4>
+			<div class="social">
+				<ul class="icons-social">
+					<li>	<a href="https://www.linkedin.com/in/izabella-timmons-b2116453/"><i class="flaticon-linkedin"></i>
+						</a>
+					</li>
+					<li>	<a href="https://www.behance.net/bellaiza63c4d4"><i class="flaticon-behance"></i>
+						</a>
+					</li>
+					<li>	<a href="https://github.com/Bellaiza631"><i class="flaticon-github"></i>
+						</a>
+					</li>
+					<li>	<a href="https://twitter.com/Izabell23351266"><i class="flaticon-twitter"></i>
+						</a>
+					</li>
+					<li>	<a href="contact.html"><i class="flaticon-mail"></i>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<p>Designed and developed by Izabella Timmons | © Copyright 2019</p>
+		</footer>
+	</div> <!-- Close main-content -->
+
+<script>
+// Password protection
+// Password protection with Base64 encoding (for portfolio protection only)
+// Note: Client-side protection is not cryptographically secure
+const correctPassword = atob("TXlwcm9qZWN0czIwMjZJVCE=");
+
+function checkPassword() {
+	const input = document.getElementById('password-input').value;
+	const errorMsg = document.getElementById('error-message');
+	
+	if (input === correctPassword) {
+		// Store in sessionStorage so it persists during the session
+		sessionStorage.setItem('projectAccess', 'granted');
+		showContent();
+	} else {
+		errorMsg.style.display = 'block';
+		document.getElementById('password-input').value = '';
+		document.getElementById('password-input').focus();
+	}
+}
+
+function showContent() {
+	document.getElementById('password-gate').style.display = 'none';
+	document.getElementById('main-content').style.display = 'block';
+}
+
+// Check if already authenticated in this session
+window.onload = function() {
+	if (sessionStorage.getItem('projectAccess') === 'granted') {
+		showContent();
+	}
+	
+	// Allow Enter key to submit
+	document.getElementById('password-input').addEventListener('keypress', function(e) {
+		if (e.key === 'Enter') {
+			checkPassword();
+		}
+	});
+};
+</script>
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-128981519-1"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-128981519-1');
+</script>
+
+<script src="js/design.js"></script>
+<style>
+/* Impact & Results Cards Styling */
+.impact-cards {
+	display: flex;
+	gap: 30px;
+	margin-top: 40px;
+	flex-wrap: wrap;
+}
+
+.impact-card {
+	flex: 1;
+	min-width: 300px;
+	background: #ffffff;
+	border: 1px solid #e0e0e0;
+	border-radius: 8px;
+	padding: 30px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+	font-family: 'Montserrat', sans-serif;
+}
+
+.impact-header {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 20px;
+}
+
+.impact-header .checkmark {
+	background: #00C853;
+	color: white;
+	width: 28px;
+	height: 28px;
+	border-radius: 50%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 16px;
+	font-weight: bold;
+	flex-shrink: 0;
+}
+
+.impact-header h3 {
+	margin: 0;
+	font-size: 20px;
+	font-weight: 600;
+	color: #333;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.impact-card ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.impact-card ul li {
+	padding-left: 20px;
+	margin-bottom: 15px;
+	position: relative;
+	line-height: 1.6;
+	color: #555;
+}
+
+.impact-card ul li:before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: #00C853;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+.impact-card ul li:last-child {
+	margin-bottom: 0;
+}
+
+/* Research Methods Layout */
+.research-layout {
+	display: flex;
+	gap: 40px;
+	margin-top: 30px;
+	align-items: flex-start;
+}
+
+/* Findings sections spacing */
+.findings-section {
+	margin-bottom: 60px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.findings-section:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+/* User Journey Map section */
+.journey-content {
+	margin-top: 30px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.journey-content h3 {
+	font-size: 20px;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.journey-content p {
+	line-height: 1.6;
+	color: #555;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.journey-content p strong {
+	display: block;
+	margin-top: 25px;
+	margin-bottom: 8px;
+	font-weight: 600;
+}
+
+.journey-content ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 25px 0;
+}
+
+.journey-content ul li {
+	padding-left: 20px;
+	margin-bottom: 10px;
+	position: relative;
+	line-height: 1.6;
+	color: #555;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.journey-content ul li:before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: #3638DE;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.journey-map-image {
+	margin-top: 40px;
+	width: 100%;
+}
+
+.journey-map-image img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* High-Fidelity Designs section */
+.highfi-content {
+	margin-top: 30px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.highfi-content p {
+	line-height: 1.6;
+	color: #555;
+	margin-bottom: 20px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.highfi-content ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 40px 0;
+}
+
+.highfi-content ul li {
+	padding-left: 20px;
+	margin-bottom: 10px;
+	position: relative;
+	line-height: 1.6;
+	color: #555;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.highfi-content ul li:before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: #3638DE;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.highfi-image {
+	width: 100%;
+	margin-top: 20px;
+}
+
+.highfi-image img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Testing Methodology section */
+.testing-content {
+	margin-top: 30px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.testing-content p {
+	line-height: 1.6;
+	color: #555;
+	margin-bottom: 20px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.testing-content h3 {
+	font-size: 18px;
+	font-weight: 600;
+	color: #333;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.testing-content ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 25px 0;
+}
+
+.testing-content ul li {
+	padding-left: 20px;
+	margin-bottom: 10px;
+	position: relative;
+	line-height: 1.6;
+	color: #555;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.testing-content ul li:before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: #3638DE;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.testing-image {
+	width: 100%;
+	margin-top: 40px;
+}
+
+.testing-image img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Key Testing Insights section */
+.insights-content {
+	display: flex;
+	gap: 50px;
+	margin-top: 30px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.insights-column {
+	flex: 1;
+}
+
+.insights-column h3 {
+	font-size: 18px;
+	font-weight: 600;
+	color: #333;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.insights-column h3:first-child {
+	margin-top: 0;
+}
+
+.insights-column p {
+	line-height: 1.6;
+	color: #555;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.insights-column ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 25px 0;
+}
+
+.insights-column ul li {
+	padding-left: 20px;
+	margin-bottom: 12px;
+	position: relative;
+	line-height: 1.6;
+	color: #555;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.insights-column ul li:before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: #3638DE;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+/* Design Iterations section */
+.iteration {
+	margin-bottom: 60px;
+	padding-bottom: 40px;
+	border-bottom: 1px solid #e0e0e0;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.iteration:last-child {
+	border-bottom: none;
+	margin-bottom: 0;
+	padding-bottom: 0;
+}
+
+.iteration h3 {
+	font-size: 22px;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 30px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.iteration-content {
+	display: flex;
+	flex-direction: column;
+	gap: 20px;
+}
+
+.iteration-text-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+}
+
+.iteration-text-col h4 {
+	font-size: 18px;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.iteration-text-col p {
+	line-height: 1.6;
+	color: #555;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.iteration-text-col .quote {
+	font-style: italic;
+	color: #3638DE;
+	padding-left: 20px;
+	border-left: 3px solid #3638DE;
+	margin: 20px 0 15px 0;
+	line-height: 1.6;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.iteration-image-row {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+	align-items: start;
+}
+
+.iteration-image {
+	width: 100%;
+}
+
+.iteration-image img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.research-text {
+	flex: 1;
+	max-width: 50%;
+}
+
+.research-text h3 {
+	font-size: 18px;
+	font-weight: 600;
+	color: #333;
+	margin-top: 30px;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.research-text h3:first-child {
+	margin-top: 0;
+}
+
+.research-text ul {
+	list-style: none;
+	padding: 0;
+	margin: 0 0 20px 0;
+}
+
+.research-text ul li {
+	padding-left: 20px;
+	margin-bottom: 10px;
+	position: relative;
+	line-height: 1.6;
+	color: #555;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.research-text ul li:before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: #3638DE;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.research-text p {
+	line-height: 1.6;
+	color: #555;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.research-text p strong {
+	display: block;
+	margin-top: 25px;
+	margin-bottom: 8px;
+	font-weight: 600;
+}
+
+.research-image {
+	flex: 1;
+	max-width: 50%;
+}
+
+.research-image img {
+	width: 100%;
+	height: auto;
+	border-radius: 8px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Fix for 2-column persona layout */
+.personas .twoteste {
+	width: 50% !important;
+	padding: 0 3% !important;
+	border-bottom: none !important;
+}
+
+.personas .twoteste:first-child {
+	border-right: 1px solid #d8d6dc;
+	padding-right: 4% !important;
+}
+
+.personas .twoteste:last-child {
+	padding-left: 4% !important;
+}
+
+/* Fix spacing between persona sections */
+.personas .avatar-quoteteste {
+	margin-bottom: 64px !important;
+}
+
+.personas .avatar-quoteteste p {
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+.personas .frustration,
+.personas .goal {
+	margin-top: 0 !important;
+	margin-bottom: 0 !important;
+	height: auto !important;
+}
+
+.personas .frustration {
+	height: auto !important;
+	margin-top: 0 !important;
+}
+
+.personas .bold-persona {
+	padding-top: 0 !important;
+	margin-top: 0 !important;
+	margin-bottom: 8px !important;
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+.personas .bold-persona-ol {
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+.personas .persona-body {
+	margin-top: 0 !important;
+	margin-bottom: 20px !important;
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+.personas .persona-body li {
+	padding-bottom: 8px !important;
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+.personas .twoteste p {
+	font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Global hierarchy improvements */
+strong {
+	font-weight: 600;
+	color: #333;
+}
+
+/* Make metrics stand out more */
+.impact-card ul li strong,
+.research-text ul li strong,
+.iteration-side p strong {
+	font-weight: 700;
+	color: #1a1a1a;
+}
+
+/* Before/After Comparison section */
+.before-after-grid {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+	margin-top: 40px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.before-after-item {
+	background: #f9f9f9;
+	border-radius: 8px;
+	padding: 30px;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.label-tag {
+	display: inline-block;
+	padding: 6px 14px;
+	border-radius: 4px;
+	font-size: 12px;
+	font-weight: 600;
+	letter-spacing: 0.5px;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.label-tag.legacy {
+	background: #FFE5E5;
+	color: #CC0000;
+}
+
+.label-tag.before {
+	background: #FFF3E0;
+	color: #F57C00;
+}
+
+.before-after-item h3 {
+	font-size: 20px;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 20px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.comparison-image {
+	margin-bottom: 25px;
+	border-radius: 6px;
+	overflow: hidden;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-image img {
+	width: 100%;
+	height: auto;
+	display: block;
+}
+
+.comparison-details h4 {
+	font-size: 16px;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 12px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.comparison-details ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.comparison-details ul li {
+	padding-left: 20px;
+	margin-bottom: 10px;
+	position: relative;
+	line-height: 1.6;
+	color: #555;
+	font-size: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.comparison-details ul li:before {
+	content: "×";
+	position: absolute;
+	left: 0;
+	color: #dc3545;
+	font-weight: bold;
+	font-size: 20px;
+}
+
+/* Key Learnings section */
+.conclusion {
+	max-width: 900px;
+	margin: 0 auto;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.conclusion h3 {
+	font-size: 20px;
+	font-weight: 600;
+	color: #333;
+	margin-top: 40px;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.conclusion h3:first-child {
+	margin-top: 0;
+}
+
+.conclusion p {
+	line-height: 1.6;
+	color: #555;
+	margin-bottom: 25px;
+	font-family: 'Montserrat', sans-serif;
+	font-size: 16px;
+}
+
+.conclusion p strong {
+	font-weight: 700;
+	color: #1a1a1a;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+	.impact-cards {
+		flex-direction: column;
+		gap: 20px;
+	}
+	
+	.impact-card {
+		min-width: 100%;
+		padding: 20px;
+	}
+	
+	.impact-header h3 {
+		font-size: 18px;
+	}
+	
+	.impact-card ul li {
+		font-size: 14px;
+		margin-bottom: 12px;
+	}
+	
+	/* Make images responsive */
+	.research-image img,
+	.persona-images img,
+	.finding-image img,
+	.workshop-image img,
+	.lowfi-image img,
+	.highfi-image img,
+	.wizard-image img,
+	.dashboard-image img,
+	.checklist-image img,
+	.testing-image img,
+	.iteration-image img {
+		width: 100%;
+		height: auto;
+		max-width: 100%;
+	}
+	
+	/* Research layout mobile */
+	.research-layout {
+		flex-direction: column;
+	}
+	
+	/* Insights layout mobile */
+	.insights-content {
+		flex-direction: column;
+		gap: 20px;
+	}
+	
+	/* Iterations layout mobile */
+	.iteration-text-row,
+	.iteration-image-row {
+		grid-template-columns: 1fr;
+		gap: 30px;
+	}
+	
+	/* Before/After comparison mobile */
+	.before-after-grid {
+		grid-template-columns: 1fr;
+		gap: 30px;
+	}
+	
+	.before-after-item {
+		padding: 20px;
+	}
+	
+	.iteration {
+		margin-bottom: 40px;
+		padding-bottom: 30px;
+	}
+	
+	.research-text {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	
+	.research-image {
+		width: 100%;
+	}
+	
+	/* Personas mobile */
+	.personas .twoteste {
+		width: 100% !important;
+		border-right: none !important;
+		border-bottom: 2px solid #d8d6dc;
+		padding: 0 0 5% 0 !important;
+		margin-bottom: 5%;
+	}
+	
+	.personas .twoteste:last-child {
+		border-bottom: none;
+		padding-left: 0 !important;
+	}
+	
+	/* Adjust row layouts for mobile */
+	.row {
+		flex-direction: column;
+	}
+	
+	.col-md-6,
+	.col-md-4 {
+		width: 100%;
+		margin-bottom: 20px;
+	}
+	
+	/* Iteration sections */
+	.iteration .row {
+		flex-direction: column;
+	}
+	
+	.iteration .col-md-6 {
+		width: 100%;
+	}
+	
+	.iteration-image {
+		margin-bottom: 20px;
+	}
+}
+
+@media (max-width: 480px) {
+	.impact-card {
+		padding: 15px;
+	}
+	
+	.impact-header h3 {
+		font-size: 16px;
+	}
+	
+	.impact-card ul li {
+		font-size: 13px;
+		padding-left: 18px;
+	}
+	
+	.impact-header .checkmark {
+		width: 24px;
+		height: 24px;
+		font-size: 14px;
+	}
+}
+</style>
+</body>
+
+</html>
+
+<style>
+/* Fix horizontal scrolling */
+html, body {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+.container {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+.wrap, .wrap-padding {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+.row {
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+/* Additional DA-specific styling */
+.journey-flow {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 20px;
+	margin-top: 30px;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+.journey-step {
+	text-align: center;
+	padding: 20px;
+	background: #f9f9f9;
+	border-radius: 8px;
+}
+
+.journey-avatar {
+	width: 80px;
+	height: 80px;
+	margin: 0 auto 15px;
+	overflow: hidden;
+	border-radius: 50%;
+}
+
+.journey-avatar img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.journey-step h4 {
+	font-size: 16px;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 12px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.journey-step p {
+	font-size: 14px;
+	line-height: 1.6;
+	color: #555;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.journey-arrow {
+	color: #999;
+	font-size: 14px;
+	margin-top: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.needs-grid {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 30px;
+	margin-top: 30px;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+.need-column {
+	background: #f9f9f9;
+	padding: 30px;
+	border-radius: 8px;
+}
+
+.need-column h3 {
+	font-size: 18px;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.need-column p {
+	font-size: 15px;
+	line-height: 1.6;
+	color: #555;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.need-column ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.need-column ul li {
+	padding-left: 20px;
+	margin-bottom: 10px;
+	position: relative;
+	line-height: 1.6;
+	color: #555;
+	font-size: 14px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.need-column ul li:before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: #3638DE;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.validation-columns {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+	margin-top: 30px;
+	max-width: 100%;
+	overflow-x: hidden;
+}
+
+.validation-col h3 {
+	font-size: 20px;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 20px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.validation-col ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.validation-col ul li {
+	padding-left: 20px;
+	margin-bottom: 20px;
+	position: relative;
+	line-height: 1.6;
+	color: #555;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.validation-col ul li:before {
+	content: "•";
+	position: absolute;
+	left: 0;
+	color: #3638DE;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.learning-section {
+	margin-top: 30px;
+	margin-bottom: 40px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #e0e0e0;
+}
+
+.learning-section:first-child {
+	margin-top: 0;
+}
+
+.learning-section:last-child {
+	border-bottom: none;
+	padding-bottom: 0;
+}
+
+.learning-section h3 {
+	font-size: 20px;
+	font-weight: 600;
+	color: #333;
+	margin-bottom: 15px;
+	font-family: 'Montserrat', sans-serif;
+}
+
+.learning-section p {
+	line-height: 1.6;
+	color: #555;
+	font-family: 'Montserrat', sans-serif;
+}
+
+/* Fix persona image sizes - ensure all are consistent */
+.avatar-teste img {
+	max-width: 150px !important;
+	
+
+	object-fit: contain;
+	display: block;
+	margin: 0 auto;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+	.journey-flow {
+		grid-template-columns: 1fr;
+		gap: 30px;
+	}
+	
+	.needs-grid {
+		grid-template-columns: 1fr;
+		gap: 20px;
+	}
+	
+	.validation-columns {
+		grid-template-columns: 1fr;
+		gap: 30px;
+	}
+}
+</style>
+
+</body>
+</html>
